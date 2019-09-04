@@ -1,6 +1,12 @@
+:root {
+  --mdc-theme-background: white;
+  --mdc-shape-small: 4px;
+}
+
 body {
   display: flex;
   padding: 2rem;
+  background: var(--mdc-theme-background);
 }
 
 .sidebar {
@@ -19,3 +25,44 @@ body {
 }
 
 /* Styling components within main content */
+
+.main-content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.main-content .column {
+  width: 420px;
+  display: block;
+}
+
+.component-section {
+  margin: 16px 20px 40px 20px;
+}
+
+.component-section-row {
+  display: flex;
+}
+
+.section-header {
+  display: flex;
+  height: 36px;
+  font-family: Roboto, sans-serif;
+}
+
+.component-wrapper {
+  margin: 16px 0;
+}
+
+/* Move elements inline */
+.mdc-dialog,
+.mdc-top-app-bar,
+.mdc-snackbar {
+  position: relative;
+}
+
+/* Border/Shape */
+.mdc-button {
+  border-radius: var(--mdc-shape-small)
+}

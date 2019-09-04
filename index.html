@@ -13,745 +13,756 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
   <div class="sidebar">
     <div class="source">
-      <img src="disco.jpg" alt="" class="source-image">
+        <input type="file" accept="image/*" onchange="loadFile(event)">
+        <img id="source-image" />
+      <!-- <img src="disco.jpg" alt="" class="source-image"> -->
     </div>
   </div>
 
   <!-- Components Layout from Theme Builder -->
   <main class="main-content mdc-top-app-bar--fixed-adjust">
-    <div class="theme-builder-desc-banner mdc-typography--caption">
-      Build your own custom Material Theme by remixing and styling these themeable components.
-    </div>
-    <div class="column">
-      <!-- Button -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/buttons.html" class="mdc-typography--button" target="_blank">
-            Button
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper button-component-wrapper">
-          <button class="mdc-button mdc-button--raised">
-            Button
-          </button>
-          <button class="mdc-button">
-            Button
-          </button>
-          <button class="mdc-button mdc-button--outlined">
-            Button
-          </button>
-        </div>
-      </section>
-
-      <!-- Top app bar -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/app-bars-top.html" class="mdc-typography--button"
-            target="_blank">
-            Top App Bar
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-            <div class="mdc-top-app-bar__row">
-              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-                <span class="mdc-top-app-bar__title">Headline 6</span>
-              </section>
-              <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Share" alt="Share">share</a>
-                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page"
-                  alt="Bookmark this page">bookmark</a>
-                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Search this page"
-                  alt="Search this page">search</a>
-              </section>
-            </div>
-          </header>
-        </div>
-      </section>
-
-      <!-- Drawer -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/navigation-drawer.html" class="mdc-typography--button"
-            target="_blank">
-            Drawer
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper drawer-component-wrapper">
-          <aside class="mdc-drawer">
-            <div class="mdc-drawer__header">
-              <h3 class="mdc-drawer__title">Headline 6</h3>
-              <h6 class="mdc-drawer__subtitle">Body 2</h6>
-            </div>
-            <hr class="mdc-list-divider">
-            <div class="mdc-drawer__content">
-              <nav class="mdc-list" role="listbox">
-                <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
-                  <span class="mdc-list-item__text">Body 2</span>
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>
-                  <span class="mdc-list-item__text">Body 2</span>
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">bookmark</i>
-                  <span class="mdc-list-item__text">Body 2</span>
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
-                  <span class="mdc-list-item__text">Body 2</span>
-                </a>
-                <a class="mdc-list-item" href="#">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-                  <span class="mdc-list-item__text">Body 2</span>
-                </a>
-              </nav>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <div class="component-section-row">
-        <!-- Short top app bar -->
+      <div class="column">
+        <!-- Button -->
         <section class="component-section">
           <div class="section-header">
-            <a href="https://material.io/design/components/app-bars-top.html" class="mdc-typography--button"
-              target="_blank">
-              Short App Bar
+            <a href="https://material.io/design/components/buttons.html" class="mdc-typography--button" target="_blank">
+              Button
               <i class="material-icons">open_in_new</i>
             </a>
           </div>
-          <div class="component-wrapper">
-            <header class="mdc-top-app-bar mdc-top-app-bar--short mdc-top-app-bar--short-collapsed">
+          <div class="component-wrapper button-component-wrapper">
+            <button class="mdc-button mdc-button--raised mdc-ripple-upgraded">
+              Button
+            </button>
+            <button class="mdc-button mdc-ripple-upgraded">
+              Button
+            </button>
+            <button class="mdc-button mdc-button--outlined mdc-ripple-upgraded">
+              Button
+            </button>
+          </div>
+        </section>
+
+        <!-- Top app bar -->
+        <section class="component-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/app-bars-top.html" class="mdc-typography--button" target="_blank">
+              Top App Bar
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper top-bar-component-wrapper">
+            <header class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-top-app-bar--fixed-scrolled">
               <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                  <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
+                  <a class="material-icons mdc-top-app-bar__navigation-icon mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" style="--mdc-ripple-fg-size:14px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:5px; --mdc-ripple-top:5px;">menu</a>
+                  <span class="mdc-top-app-bar__title">Headline 6</span>
                 </section>
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-                  <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Open shopping cart"
-                    alt="Open shopping cart">shopping_cart</a>
+                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Share" alt="Share" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">share</a>
+                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Bookmark this page" alt="Bookmark this page" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">bookmark</a>
+                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Search this page" alt="Search this page" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">search</a>
                 </section>
               </div>
             </header>
           </div>
         </section>
 
-        <!-- Menu -->
+        <!-- Drawer -->
         <section class="component-section">
           <div class="section-header">
-            <a href="https://material.io/design/components/menus.html" class="mdc-typography--button" target="_blank">
-              Menu
+            <a href="https://material.io/design/components/navigation-drawer.html" class="mdc-typography--button" target="_blank">
+              Drawer
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper drawer-component-wrapper">
+            <aside class="mdc-drawer">
+              <div class="mdc-drawer__header">
+                <h3 class="mdc-drawer__title">Headline 6</h3>
+                <h6 class="mdc-drawer__subtitle">Body 2</h6>
+              </div>
+              <hr class="mdc-list-divider">
+              <div class="mdc-drawer__content">
+                <nav class="mdc-list" role="listbox">
+                  <a class="mdc-list-item mdc-list-item--activated mdc-ripple-upgraded" aria-selected="true" tabindex="-1">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item mdc-ripple-upgraded" tabindex="-1">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">star</i>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item mdc-ripple-upgraded" tabindex="-1">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">bookmark</i>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item mdc-ripple-upgraded" tabindex="-1">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                  <a class="mdc-list-item mdc-ripple-upgraded" tabindex="-1">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                    <span class="mdc-list-item__text">Body 2</span>
+                  </a>
+                </nav>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <div class="component-section-row">
+          <!-- Short top app bar -->
+          <section class="component-section short-app-bar-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/app-bars-top.html" class="mdc-typography--button" target="_blank">
+                Short App Bar
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <header class="mdc-top-app-bar mdc-top-app-bar--short mdc-top-app-bar--short-collapsed mdc-top-app-bar--short-has-action-item">
+                <div class="mdc-top-app-bar__row">
+                  <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a class="material-icons mdc-icon-button mdc-top-app-bar__navigation-icon mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">menu</a>
+                  </section>
+                  <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                    <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Open shopping cart" alt="Open shopping cart" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:-2px; --mdc-ripple-top:10px;">shopping_cart</a>
+                  </section>
+                </div>
+              </header>
+            </div>
+          </section>
+
+          <!-- Menu -->
+          <section class="component-section menu-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/menus.html" class="mdc-typography--button" target="_blank">
+                Menu
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <div class="mdc-menu-surface--anchor">
+                <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open" tabindex="-1" style="transform-origin: center bottom; left: 0px; bottom: 0px; max-height: 1066px;">
+                  <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                    <li class="mdc-list-item mdc-ripple-upgraded" role="menuitem" tabindex="-1">
+                      <span class="mdc-list-item__text">Body 2</span>
+                    </li>
+                    <li class="mdc-list-item mdc-ripple-upgraded" role="menuitem" tabindex="-1">
+                      <span class="mdc-list-item__text">Body 2</span>
+                    </li>
+                    <li class="mdc-list-item mdc-ripple-upgraded" role="menuitem" tabindex="-1">
+                      <span class="mdc-list-item__text">Body 2</span>
+                    </li>
+                    <li class="mdc-list-item mdc-ripple-upgraded" role="menuitem" tabindex="-1">
+                      <span class="mdc-list-item__text">Body 2</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Linear progress -->
+        <section class="component-section linear-progress-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/progress-indicators.html#linear-progress-indicators" class="mdc-typography--button" target="_blank">
+              Linear Progress
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper linear-progress-component-wrapper">
+            <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+              <div class="mdc-linear-progress__buffering-dots"></div>
+              <div class="mdc-linear-progress__buffer"></div>
+              <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                <span class="mdc-linear-progress__bar-inner"></span>
+              </div>
+              <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                <span class="mdc-linear-progress__bar-inner"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="component-section-row switch-checkbox-row">
+          <!-- Switch -->
+          <section class="component-section switch-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/selection-controls.html#switches" class="mdc-typography--button" target="_blank">
+                Switch
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper switch-component-wrapper">
+              <div class="mdc-switch">
+                <div class="mdc-switch__track"></div>
+                <div class="mdc-switch__thumb-underlay mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">
+                  <div class="mdc-switch__thumb">
+                      <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch">
+                  </div>
+                </div>
+              </div>
+              <div class="mdc-switch mdc-switch--checked">
+                <div class="mdc-switch__track"></div>
+                <div class="mdc-switch__thumb-underlay mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">
+                  <div class="mdc-switch__thumb">
+                      <input type="checkbox" id="basic-switch-2" class="mdc-switch__native-control" role="switch" checked="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Checkbox -->
+          <section class="component-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/selection-controls.html#checkboxes" class="mdc-typography--button" target="_blank">
+                Checkbox
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper checkbox-component-wrapper">
+              <div class="mdc-checkbox mdc-checkbox--upgraded mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                <input type="checkbox" class="mdc-checkbox__native-control">
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+              <div class="mdc-checkbox indeterminate-checkbox mdc-checkbox--upgraded mdc-checkbox--selected mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                <input type="checkbox" class="mdc-checkbox__native-control" aria-checked="mixed">
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+              <div class="mdc-checkbox mdc-checkbox--upgraded mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                <input type="checkbox" class="mdc-checkbox__native-control" checked="">
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="component-section-row radio-row">
+          <!-- Radio -->
+          <section class="component-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/selection-controls.html#radio-buttons" class="mdc-typography--button" target="_blank">
+                Radio Button
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper radio-component-wrapper">
+              <div class="mdc-radio mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios" checked="">
+                <div class="mdc-radio__background">
+                  <div class="mdc-radio__outer-circle"></div>
+                  <div class="mdc-radio__inner-circle"></div>
+                </div>
+              </div>
+              <div class="mdc-radio mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios" checked="">
+                <div class="mdc-radio__background">
+                  <div class="mdc-radio__outer-circle"></div>
+                  <div class="mdc-radio__inner-circle"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Icon button -->
+          <section class="component-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/buttons.html#toggle-button" class="mdc-typography--button" target="_blank">
+                Icon Button
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper icon-button-component-wrapper">
+              <button id="icon-toggle-button" class="mdc-icon-button mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Music off" aria-hidden="true" aria-pressed="false" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">
+                <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">music_off</i>
+                <i class="material-icons mdc-icon-button__icon">music_note</i>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Chips -->
+        <section class="component-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/chips.html" class="mdc-typography--button" target="_blank">
+              Chips
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper chips-component-wrapper chips-component-wrapper-1">
+            <div class="mdc-chip-set mdc-chip-set--choice">
+              <div class="mdc-chip mdc-chip--selected mdc-ripple-upgraded" tabindex="0" id="mdc-chip-1" aria-checked="true">
+                <div class="mdc-chip__text">Body 2</div>
+              </div>
+              <div class="mdc-chip mdc-ripple-upgraded" tabindex="0" id="mdc-chip-2">
+                <div class="mdc-chip__text">Body 2</div>
+              </div>
+              <div class="mdc-chip mdc-ripple-upgraded" tabindex="0" id="mdc-chip-3">
+                <div class="mdc-chip__text">Body 2</div>
+              </div>
+            </div>
+          </div>
+          <div class="component-wrapper chips-component-wrapper chips-component-wrapper-2">
+            <div class="mdc-chip-set mdc-chip-set--filter">
+              <div class="mdc-chip mdc-ripple-upgraded" id="mdc-chip-4">
+                <div class="mdc-chip__checkmark">
+                  <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                    <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                  </svg>
+                </div>
+                <div class="mdc-chip__text">Body 2</div>
+              </div>
+              <div class="mdc-chip mdc-chip--selected mdc-ripple-upgraded" id="mdc-chip-5" aria-checked="true">
+                <div class="mdc-chip__checkmark">
+                  <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                    <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                  </svg>
+                </div>
+                <div class="mdc-chip__text">Body 2</div>
+              </div>
+              <div class="mdc-chip mdc-chip--selected mdc-ripple-upgraded" id="mdc-chip-6" aria-checked="true">
+                <div class="mdc-chip__checkmark">
+                  <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                    <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                  </svg>
+                </div>
+                <div class="mdc-chip__text">Body 2</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="component-section-row">
+          <!-- Select -->
+          <section class="component-section select-component">
+            <div class="section-header">
+              <a href="https://material.io/develop/web/components/input-controls/select-menus/" class="mdc-typography--button" target="_blank">
+                Select
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <div class="mdc-select mdc-ripple-upgraded">
+                <input type="hidden" name="enhanced-select" value="">
+                <i class="mdc-select__dropdown-icon"></i>
+                <div class="mdc-select__selected-text" role="button" tabindex="0"></div>
+                
+                <span class="mdc-floating-label">Label</span>
+                <div class="mdc-line-ripple"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Select -->
+          <section class="component-section select-component">
+            <div class="section-header"><!-- Hold space for layout --></div>
+            <div class="component-wrapper">
+              <div class="mdc-select mdc-select--outlined">
+                <input type="hidden" name="enhanced-outlined-select">
+                <i class="mdc-select__dropdown-icon"></i>
+                <div class="mdc-select__selected-text" role="button" tabindex="0"></div>
+                
+                <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                  <div class="mdc-notched-outline__leading"></div>
+                  <div class="mdc-notched-outline__notch">
+                    <label class="mdc-floating-label" style="">Label</label>
+                  </div>
+                  <div class="mdc-notched-outline__trailing"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- List -->
+        <section class="component-section list-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/lists.html" class="mdc-typography--button" target="_blank">
+              List
               <i class="material-icons">open_in_new</i>
             </a>
           </div>
           <div class="component-wrapper">
-            <div class="mdc-menu-surface--anchor">
-              <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open" tabindex="-1">
-                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </li>
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </li>
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </li>
-                  <li class="mdc-list-item" role="menuitem">
-                    <span class="mdc-list-item__text">Body 2</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <ul class="mdc-list mdc-list--two-line mdc-list--avatar-list">
+              <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0">
+                <span class="mdc-list-item__graphic material-icons" aria-hidden="true">child_care</span>
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">Subtitle 1</span>
+                  <span class="mdc-list-item__secondary-text">Body 2</span>
+                </span>
+              </li>
+              <hr class="mdc-list-divider">
+              <li class="mdc-list-item mdc-ripple-upgraded" tabindex="-1">
+                <span class="mdc-list-item__graphic material-icons" aria-hidden="true">child_care</span>
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">Subtitle 1</span>
+                  <span class="mdc-list-item__secondary-text">Body 2</span>
+                </span>
+              </li>
+              <hr class="mdc-list-divider">
+              <li class="mdc-list-item mdc-ripple-upgraded" tabindex="-1">
+                <span class="mdc-list-item__graphic material-icons" aria-hidden="true">child_care</span>
+                <span class="mdc-list-item__text">
+                  <span class="mdc-list-item__primary-text">Subtitle 1</span>
+                  <span class="mdc-list-item__secondary-text">Body 2</span>
+                </span>
+              </li>
+            </ul>
           </div>
         </section>
+        
+      <!-- Data Table -->
+        <section class="component-section data-table-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/data-tables.html" class="mdc-typography--button" target="_blank">
+              Data Table
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+        <div class="mdc-data-table">
+        <table class="mdc-data-table__table" aria-label="Dessert calories">
+          <thead>
+            <tr class="mdc-data-table__header-row">
+              <th class="mdc-data-table__header-cell mdc-data-table__header-cell--checkbox" role="columnheader" scope="col">
+                <div class="mdc-checkbox mdc-checkbox--selected mdc-data-table__header-row-checkbox mdc-checkbox--upgraded mdc-checkbox--anim-unchecked-indeterminate mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                  <input type="checkbox" class="mdc-checkbox__native-control" aria-label="Toggle all rows" aria-checked="mixed">
+                  <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                  </div>
+                </div>
+              </th>
+              <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Dessert</th>
+              <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Carbs (g)</th>
+              <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Protein (g)</th>
+            </tr>
+          </thead>
+          <tbody class="mdc-data-table__content">
+            <tr class="mdc-data-table__row" data-row-id="u0">
+              <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                <div class="mdc-checkbox mdc-data-table__row-checkbox mdc-checkbox--upgraded mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                  <input type="checkbox" class="mdc-checkbox__native-control" aria-labelledby="r0">
+                  <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                  </div>
+                </div>
+              </td>
+              <td class="mdc-data-table__cell" id="r0">Froyo</td>
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric">24</td>
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric">4.0</td>
+            </tr>
+            <tr class="mdc-data-table__row mdc-data-table__row--selected" aria-selected="true" data-row-id="u1">
+              <td class="mdc-data-table__cell mdc-data-table__cell--checkbox">
+                <div class="mdc-checkbox mdc-checkbox--selected mdc-data-table__row-checkbox mdc-checkbox--upgraded mdc-ripple-upgraded mdc-ripple-upgraded--unbounded" style="--mdc-ripple-fg-size:24px; --mdc-ripple-fg-scale:1.66667; --mdc-ripple-left:8px; --mdc-ripple-top:8px;">
+                  <input type="checkbox" class="mdc-checkbox__native-control" checked="" aria-labelledby="r1">
+                  <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                      <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                  </div>
+                </div>
+              </td>
+              <td class="mdc-data-table__cell" id="r1">Eclair</td>
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric">37</td>
+              <td class="mdc-data-table__cell mdc-data-table__cell--numeric">4.3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       </div>
 
-      <!-- Linear progress -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/progress-indicators.html#linear-progress-indicators"
-            class="mdc-typography--button" target="_blank">
-            Linear Progress
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper linear-progress-component-wrapper">
-          <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
-            <div class="mdc-linear-progress__buffering-dots"></div>
-            <div class="mdc-linear-progress__buffer"></div>
-            <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
-              <span class="mdc-linear-progress__bar-inner"></span>
-            </div>
-            <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
-              <span class="mdc-linear-progress__bar-inner"></span>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section></div>
+      <div class="column column-2">
 
-      <div class="component-section-row">
-        <!-- Switch -->
+        <!-- FAB -->
         <section class="component-section">
           <div class="section-header">
-            <a href="https://material.io/design/components/selection-controls.html#switches"
-              class="mdc-typography--button" target="_blank">
-              Switch
+            <a href="https://material.io/design/components/buttons-floating-action-button.html" class="mdc-typography--button" target="_blank">
+              FAB
               <i class="material-icons">open_in_new</i>
             </a>
           </div>
-          <div class="component-wrapper switch-component-wrapper">
-            <div class="mdc-switch">
-              <div class="mdc-switch__track"></div>
-              <div class="mdc-switch__thumb-underlay">
-                <div class="mdc-switch__thumb">
-                  <input type="checkbox" id="basic-switch" class="mdc-switch__native-control" role="switch">
-                </div>
-              </div>
-            </div>
-            <div class="mdc-switch">
-              <div class="mdc-switch__track"></div>
-              <div class="mdc-switch__thumb-underlay">
-                <div class="mdc-switch__thumb">
-                  <input type="checkbox" id="basic-switch-2" class="mdc-switch__native-control" role="switch" checked>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Checkbox -->
-        <section class="component-section">
-          <div class="section-header">
-            <a href="https://material.io/design/components/selection-controls.html#checkboxes"
-              class="mdc-typography--button" target="_blank">
-              Checkbox
-              <i class="material-icons">open_in_new</i>
-            </a>
-          </div>
-          <div class="component-wrapper checkbox-component-wrapper">
-            <div class="mdc-checkbox">
-              <input type="checkbox" class="mdc-checkbox__native-control" />
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
-                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
-              </div>
-            </div>
-            <div class="mdc-checkbox indeterminate-checkbox">
-              <input type="checkbox" class="mdc-checkbox__native-control" />
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
-                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
-              </div>
-            </div>
-            <div class="mdc-checkbox">
-              <input type="checkbox" class="mdc-checkbox__native-control" checked />
-              <div class="mdc-checkbox__background">
-                <svg class="mdc-checkbox__checkmark" viewbox="0 0 24 24">
-                  <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                </svg>
-                <div class="mdc-checkbox__mixedmark"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <div class="component-section-row">
-        <!-- Radio -->
-        <section class="component-section">
-          <div class="section-header">
-            <a href="https://material.io/design/components/selection-controls.html#radio-buttons"
-              class="mdc-typography--button" target="_blank">
-              Radio Button
-              <i class="material-icons">open_in_new</i>
-            </a>
-          </div>
-          <div class="component-wrapper radio-component-wrapper">
-            <div class="mdc-radio">
-              <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios" checked>
-              <div class="mdc-radio__background">
-                <div class="mdc-radio__outer-circle"></div>
-                <div class="mdc-radio__inner-circle"></div>
-              </div>
-            </div>
-            <div class="mdc-radio">
-              <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios" checked>
-              <div class="mdc-radio__background">
-                <div class="mdc-radio__outer-circle"></div>
-                <div class="mdc-radio__inner-circle"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Icon button -->
-        <section class="component-section">
-          <div class="section-header">
-            <a href="https://material.io/design/components/buttons.html#toggle-button" class="mdc-typography--button"
-              target="_blank">
-              Icon Button
-              <i class="material-icons">open_in_new</i>
-            </a>
-          </div>
-          <div class="component-wrapper icon-button-component-wrapper">
-            <button id="icon-toggle-button" class="mdc-icon-button" aria-label="Music off" aria-hidden="true"
-              aria-pressed="false">
-              <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">music_off</i>
-              <i class="material-icons mdc-icon-button__icon">music_note</i>
+          <div class="component-wrapper fab-component-wrapper">
+            <button class="mdc-fab mdc-fab--extended mdc-ripple-upgraded">
+              <span class="material-icons mdc-fab__icon">edit</span>
+              <span class="mdc-fab__label">Button</span>
+            </button>
+            <button class="mdc-fab mdc-ripple-upgraded" aria-label="Favorite">
+              <span class="mdc-fab__icon material-icons">favorite</span>
+            </button>
+            <button class="mdc-fab mdc-fab--mini mdc-ripple-upgraded" aria-label="Add">
+              <span class="mdc-fab__icon material-icons">add</span>
             </button>
           </div>
         </section>
-      </div>
 
-      <!-- Chips -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/chips.html" class="mdc-typography--button" target="_blank">
-            Chips
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper chips-component-wrapper">
-          <div class="mdc-chip-set mdc-chip-set--choice">
-            <div class="mdc-chip mdc-chip--selected" tabindex="0">
-              <div class="mdc-chip__text">Body 2</div>
-            </div>
-            <div class="mdc-chip" tabindex="0">
-              <div class="mdc-chip__text">Body 2</div>
-            </div>
-            <div class="mdc-chip" tabindex="0">
-              <div class="mdc-chip__text">Body 2</div>
-            </div>
-          </div>
-        </div>
-        <div class="component-wrapper chips-component-wrapper">
-          <div class="mdc-chip-set mdc-chip-set--filter">
-            <div class="mdc-chip">
-              <div class="mdc-chip__checkmark">
-                <svg class="mdc-chip__checkmark-svg" viewbox="-2 -3 30 30">
-                  <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                </svg>
-              </div>
-              <div class="mdc-chip__text">Body 2</div>
-            </div>
-            <div class="mdc-chip mdc-chip--selected">
-              <div class="mdc-chip__checkmark">
-                <svg class="mdc-chip__checkmark-svg" viewbox="-2 -3 30 30">
-                  <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                </svg>
-              </div>
-              <div class="mdc-chip__text">Body 2</div>
-            </div>
-            <div class="mdc-chip mdc-chip--selected">
-              <div class="mdc-chip__checkmark">
-                <svg class="mdc-chip__checkmark-svg" viewbox="-2 -3 30 30">
-                  <path class="mdc-chip__checkmark-path" fill="none" stroke="black"
-                    d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-                </svg>
-              </div>
-              <div class="mdc-chip__text">Body 2</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="component-section-row">
-        <!-- Select -->
+        <!-- Card -->
         <section class="component-section">
           <div class="section-header">
-            <a href="https://material.io/develop/web/components/input-controls/select-menus/"
-              class="mdc-typography--button" target="_blank">
-              Select
+            <a href="https://material.io/design/components/cards.html" class="mdc-typography--button" target="_blank">
+              Card
               <i class="material-icons">open_in_new</i>
             </a>
           </div>
-          <div class="component-wrapper">
-            <div class="mdc-select">
-              <input type="hidden" name="enhanced-select">
-              <i class="mdc-select__dropdown-icon"></i>
-              <div class="mdc-select__selected-text" role="button"></div>
-              <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
-                <ul class="mdc-list">
-                  <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true" role="option">
-                  </li>
-                  <li class="mdc-list-item" data-value="item1" role="option">
-                    Body 2
-                  </li>
-                  <li class="mdc-list-item" data-value="item2" role="option">
-                    Body 2
-                  </li>
-                  <li class="mdc-list-item" data-value="item3" role="option">
-                    Body 2
-                  </li>
-                </ul>
+          <div class="component-wrapper card-component-wrapper">
+            <div class="mdc-card demo-card">
+              <div class="mdc-card__primary-action mdc-ripple-upgraded" tabindex="0">
+                <div class="mdc-card__media mdc-card__media--16-9 demo-card__media" style="background-image: url(&quot;https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209&quot;);"></div>
+                <div class="demo-card__primary">
+                    <h3 class="demo-card__subtitle mdc-typography mdc-typography--overline">Overline</h3>
+                  <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Headline 6</h2>
+                </div>
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
               </div>
-              <span class="mdc-floating-label">Label</span>
-              <div class="mdc-line-ripple"></div>
+              <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                  <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">Button</button>
+                  <button class="mdc-button mdc-card__action mdc-card__action--button mdc-ripple-upgraded">Button</button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- Select -->
+        <!-- Text field -->
         <section class="component-section">
           <div class="section-header">
-            <!-- Hold space for layout -->
+            <a href="https://material.io/design/components/text-fields.html" class="mdc-typography--button" target="_blank">
+              Text field
+              <i class="material-icons">open_in_new</i>
+            </a>
           </div>
-          <div class="component-wrapper">
-            <div class="mdc-select mdc-select--outlined">
-              <input type="hidden" name="enhanced-outlined-select">
-              <i class="mdc-select__dropdown-icon"></i>
-              <div class="mdc-select__selected-text" role="button"></div>
-              <div class="mdc-select__menu mdc-menu mdc-menu-surface" role="listbox">
-                <ul class="mdc-list">
-                  <li class="mdc-list-item" data-value="" role="option"></li>
-                  <li class="mdc-list-item" data-value="outlined-item1" role="option">
-                    Body 2
-                  </li>
-                  <li class="mdc-list-item" data-value="outlined-item2" aria-selected="true" role="option">
-                    Body 2
-                  </li>
-                  <li class="mdc-list-item" data-value="outlined-item3" role="option">
-                    Body 2
-                  </li>
-                </ul>
-              </div>
-              <div class="mdc-notched-outline">
+          <div class="component-wrapper text-field-component-wrapper text-field-component-wrapper-1">
+            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
+              <i class="material-icons mdc-text-field__icon">visibility</i>
+              <input class="mdc-text-field__input">
+              <div class="mdc-notched-outline mdc-notched-outline--upgraded">
                 <div class="mdc-notched-outline__leading"></div>
                 <div class="mdc-notched-outline__notch">
-                  <label class="mdc-floating-label mdc-floating-label--float-above">Label</label>
+                  <label class="mdc-floating-label" style="">Label</label>
                 </div>
                 <div class="mdc-notched-outline__trailing"></div>
               </div>
             </div>
+            <div class="mdc-text-field-helper-line">
+              <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Assistive text</div>
+            </div>
+          </div>
+          <div class="component-wrapper text-field-component-wrapper text-field-component-wrapper-2">
+            <div class="mdc-text-field text-field-with-input mdc-ripple-upgraded">
+              <input class="mdc-text-field__input">
+              <div class="mdc-line-ripple"></div>
+              <label class="mdc-floating-label mdc-floating-label--float-above">Label</label>
+            </div>
+            <div class="mdc-text-field-helper-line">
+              <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Assistive text</div>
+            </div>
           </div>
         </section>
+
+        <!-- Tabs -->
+        <section class="component-section tabs-section">
+            <div class="section-header">
+              <a href="https://material.io/design/components/tabs.html" class="mdc-typography--button" target="_blank">
+                Tabs
+                <i class="material-icons">open_in_new</i>
+              </a>
+            </div>
+            <div class="component-wrapper">
+              <div class="mdc-tab-bar" role="tablist">
+                <div class="mdc-tab-scroller">
+                  <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                    <div class="mdc-tab-scroller__scroll-content">
+                      <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-1">
+                        <span class="mdc-tab__content">
+                          <span class="mdc-tab__text-label">Button</span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                      </button>
+                      <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-2">
+                        <span class="mdc-tab__content">
+                          <span class="mdc-tab__text-label">Button</span>
+                        </span>
+                        <span class="mdc-tab-indicator">
+                          <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                      </button>
+                      <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-3">
+                          <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Button</span>
+                          </span>
+                          <span class="mdc-tab-indicator">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                          </span>
+                          <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                        </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- Slider -->
+        <section class="component-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/sliders.html" class="mdc-typography--button" target="_blank">
+              Slider
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <div class="mdc-slider mdc-slider--discrete mdc-slider--display-markers" tabindex="0" role="slider" aria-valuemin="1" aria-valuemax="10" aria-label="Select Value" aria-valuenow="5">
+              <div class="mdc-slider__track-container">
+                <div class="mdc-slider__track" style="transform: scaleX(0.444444);"></div>
+                <div class="mdc-slider__track-marker-container"><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div><div class="mdc-slider__track-marker"></div></div>
+              </div>
+              <div class="mdc-slider__thumb-container" style="transform: translateX(168.889px) translateX(-50%);">
+                <div class="mdc-slider__pin">
+                  <span class="mdc-slider__pin-value-marker"></span>
+                </div>
+                <svg class="mdc-slider__thumb" width="21" height="21">
+                  <circle cx="10.5" cy="10.5" r="7.875"></circle>
+                </svg>
+                <div class="mdc-slider__focus-ring"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Snackbar -->
+        <section class="component-section snackbar-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/snackbars.html" class="mdc-typography--button" target="_blank">
+              Snackbar
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <div class="mdc-snackbar mdc-snackbar--open">
+              <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                  Marked as favorite.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dialog -->
+        <section class="component-section dialog-component-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/dialogs.html" class="mdc-typography--button" target="_blank">
+              Dialog
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper dialog-component-wrapper">
+            <div class="mdc-dialog mdc-dialog--open" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
+              <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                  <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                  <h2 class="mdc-dialog__title" id="my-dialog-title">Headline 6</h2>
+                  <div class="mdc-dialog__content" id="my-dialog-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </div>
+                  <footer class="mdc-dialog__actions">
+                    <button type="button" class="mdc-button mdc-dialog__button mdc-ripple-upgraded" data-mdc-dialog-action="no">
+                      <span class="mdc-button__label">Button</span>
+                    </button>
+                    <button type="button" class="mdc-button mdc-dialog__button mdc-ripple-upgraded" data-mdc-dialog-action="yes">
+                      <span class="mdc-button__label">Button</span>
+                    </button>
+                  </footer>
+                </div>
+              </div>
+              <!-- Note scrim element has been removed for this stickersheet -->
+              <!-- <div class="mdc-dialog__scrim"></div> -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Image List -->
+        <section class="component-section image-list-section">
+          <div class="section-header">
+            <a href="https://material.io/design/components/image-lists.html" class="mdc-typography--button" target="_blank">
+              Image List
+              <i class="material-icons">open_in_new</i>
+            </a>
+          </div>
+          <div class="component-wrapper">
+            <ul class="mdc-image-list mdc-image-list--masonry">
+              <li class="mdc-image-list__item">
+                <img class="mdc-image-list__image" src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-portrait.png?1553629847850">
+              </li>
+              <li class="mdc-image-list__item">
+                <img class="mdc-image-list__image" src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209">
+              </li>
+              <li class="mdc-image-list__item">
+                <img class="mdc-image-list__image" src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-med.png?1553629847913">
+              </li>
+              <li class="mdc-image-list__item">
+                <img class="mdc-image-list__image" src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209">
+              </li>
+              <li class="mdc-image-list__item">
+                <img class="mdc-image-list__image" src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-portrait.png?1553629847850">
+              </li>
+              <li class="mdc-image-list__item">
+                <img class="mdc-image-list__image" src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209">
+              </li>
+            </ul>
+          </div>
+        </section>
+
       </div>
-
-      <!-- List -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/lists.html" class="mdc-typography--button" target="_blank">
-            List
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <ul class="mdc-list mdc-list--two-line mdc-list--avatar-list">
-            <li class="mdc-list-item" tabindex="0">
-              <span class="mdc-list-item__graphic material-icons" aria-hidden="true">child_care</span>
-              <span class="mdc-list-item__text">
-                <span class="mdc-list-item__primary-text">Subtitle 1</span>
-                <span class="mdc-list-item__secondary-text">Body 2</span>
-              </span>
-            </li>
-            <hr class="mdc-list-divider">
-            <li class="mdc-list-item">
-              <span class="mdc-list-item__graphic material-icons" aria-hidden="true">child_care</span>
-              <span class="mdc-list-item__text">
-                <span class="mdc-list-item__primary-text">Subtitle 1</span>
-                <span class="mdc-list-item__secondary-text">Body 2</span>
-              </span>
-            </li>
-            <hr class="mdc-list-divider">
-            <li class="mdc-list-item">
-              <span class="mdc-list-item__graphic material-icons" aria-hidden="true">child_care</span>
-              <span class="mdc-list-item__text">
-                <span class="mdc-list-item__primary-text">Subtitle 1</span>
-                <span class="mdc-list-item__secondary-text">Body 2</span>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-    </div>
-    <div class="column">
-
-      <!-- FAB -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/buttons-floating-action-button.html"
-            class="mdc-typography--button" target="_blank">
-            FAB
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper fab-component-wrapper">
-          <button class="mdc-fab mdc-fab--extended">
-            <span class="material-icons mdc-fab__icon">edit</span>
-            <span class="mdc-fab__label">Button</span>
-          </button>
-          <button class="mdc-fab" aria-label="Favorite">
-            <span class="mdc-fab__icon material-icons">favorite</span>
-          </button>
-          <button class="mdc-fab mdc-fab--mini" aria-label="Add">
-            <span class="mdc-fab__icon material-icons">add</span>
-          </button>
-        </div>
-      </section>
-
-      <!-- Card -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/cards.html" class="mdc-typography--button" target="_blank">
-            Card
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <div class="mdc-card demo-card">
-            <div class="mdc-card__primary-action" tabindex="0">
-              <div class="mdc-card__media mdc-card__media--16-9 demo-card__media"
-                style="background-image: url(&quot;https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209&quot;);">
-              </div>
-              <div class="demo-card__primary">
-                <h3 class="demo-card__subtitle mdc-typography mdc-typography--overline">Overline</h3>
-                <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Headline 6</h2>
-              </div>
-              <div class="demo-card__secondary mdc-typography mdc-typography--body2">Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-            </div>
-            <div class="mdc-card__actions">
-              <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-card__action mdc-card__action--button">Button</button>
-                <button class="mdc-button mdc-card__action mdc-card__action--button">Button</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Text field -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/text-fields.html" class="mdc-typography--button"
-            target="_blank">
-            Text field
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper text-field-component-wrapper">
-          <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon">
-            <i class="material-icons mdc-text-field__icon">visibility</i>
-            <input class="mdc-text-field__input">
-            <div class="mdc-notched-outline">
-              <div class="mdc-notched-outline__leading"></div>
-              <div class="mdc-notched-outline__notch">
-                <label class="mdc-floating-label">Label</label>
-              </div>
-              <div class="mdc-notched-outline__trailing"></div>
-            </div>
-          </div>
-          <div class="mdc-text-field-helper-line">
-            <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Assistive text</div>
-          </div>
-        </div>
-        <div class="component-wrapper text-field-component-wrapper">
-          <div class="mdc-text-field text-field-with-input">
-            <input class="mdc-text-field__input">
-            <div class="mdc-line-ripple"></div>
-            <label class="mdc-floating-label mdc-floating-label--float-above">Label</label>
-          </div>
-          <div class="mdc-text-field-helper-line">
-            <div class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">Assistive text</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Tabs -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/tabs.html" class="mdc-typography--button" target="_blank">
-            Tabs
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <div class="mdc-tab-bar" role="tablist">
-            <div class="mdc-tab-scroller">
-              <div class="mdc-tab-scroller__scroll-area">
-                <div class="mdc-tab-scroller__scroll-content">
-                  <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Button</span>
-                    </span>
-                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Button</span>
-                    </span>
-                    <span class="mdc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                  <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
-                    <span class="mdc-tab__content">
-                      <span class="mdc-tab__text-label">Button</span>
-                    </span>
-                    <span class="mdc-tab-indicator">
-                      <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                    </span>
-                    <span class="mdc-tab__ripple"></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Slider -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/sliders.html" class="mdc-typography--button" target="_blank">
-            Slider
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <div class="mdc-slider mdc-slider--discrete mdc-slider--display-markers" tabindex="0" role="slider"
-            aria-valuemin="1" aria-valuemax="10" aria-label="Select Value">
-            <div class="mdc-slider__track-container">
-              <div class="mdc-slider__track"></div>
-              <div class="mdc-slider__track-marker-container"></div>
-            </div>
-            <div class="mdc-slider__thumb-container">
-              <div class="mdc-slider__pin">
-                <span class="mdc-slider__pin-value-marker"></span>
-              </div>
-              <svg class="mdc-slider__thumb" width="21" height="21">
-                <circle cx="10.5" cy="10.5" r="7.875"></circle>
-              </svg>
-              <div class="mdc-slider__focus-ring"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Snackbar -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/snackbars.html" class="mdc-typography--button" target="_blank">
-            Snackbar
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <div class="mdc-snackbar mdc-snackbar--open">
-            <div class="mdc-snackbar__surface">
-              <div class="mdc-snackbar__label" role="status" aria-live="polite">
-                Marked as favorite.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Dialog -->
-      <section class="component-section dialog-component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/dialogs.html" class="mdc-typography--button" target="_blank">
-            Dialog
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <div class="mdc-dialog mdc-dialog--open" role="alertdialog" aria-modal="true"
-            aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
-            <div class="mdc-dialog__container">
-              <div class="mdc-dialog__surface">
-                <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
-                <h2 class="mdc-dialog__title" id="my-dialog-title">Headline 6</h2>
-                <div class="mdc-dialog__content" id="my-dialog-content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua.
-                </div>
-                <footer class="mdc-dialog__actions">
-                  <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
-                    <span class="mdc-button__label">Button</span>
-                  </button>
-                  <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">
-                    <span class="mdc-button__label">Button</span>
-                  </button>
-                </footer>
-              </div>
-            </div>
-            <!-- Note scrim element has been removed for this stickersheet -->
-            <!-- <div class="mdc-dialog__scrim"></div> -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Image List -->
-      <section class="component-section">
-        <div class="section-header">
-          <a href="https://material.io/design/components/image-lists.html" class="mdc-typography--button"
-            target="_blank">
-            Image List
-            <i class="material-icons">open_in_new</i>
-          </a>
-        </div>
-        <div class="component-wrapper">
-          <ul class="mdc-image-list mdc-image-list--masonry">
-            <li class="mdc-image-list__item">
-              <img class="mdc-image-list__image"
-                src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-portrait.png?1553629847850">
-            </li>
-            <li class="mdc-image-list__item">
-              <img class="mdc-image-list__image"
-                src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209">
-            </li>
-            <li class="mdc-image-list__item">
-              <img class="mdc-image-list__image"
-                src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-med.png?1553629847913">
-            </li>
-            <li class="mdc-image-list__item">
-              <img class="mdc-image-list__image"
-                src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209">
-            </li>
-            <li class="mdc-image-list__item">
-              <img class="mdc-image-list__image"
-                src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-portrait.png?1553629847850">
-            </li>
-            <li class="mdc-image-list__item">
-              <img class="mdc-image-list__image"
-                src="https://cdn.glitch.com/9c389208-b279-4e96-bcbc-e5f8712d8706%2Fplaceholder-landscape-short.png?1553629848209">
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
-  </main>
+    </main>
 </body>
 
   <!-- Scripts for Color Picking -->
   <script src="node_modules/colorthief/dist/color-thief.umd.js"></script>
   <script>
-      const colorThief = new ColorThief();
-      const img = document.querySelector('.source-image');
+      // Read Image
+      var loadFile = function(event) {
+        var output = document.getElementById('source-image');
+        output.src = URL.createObjectURL(event.target.files[0])
+
+        runColors()
+      };
 
       // In case I need to convert to hex
       const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
@@ -759,29 +770,54 @@
         return hex.length === 1 ? '0' + hex : hex
       }).join('')
 
-      // Make sure image is finished loading
-      if (img.complete) {
-        let root = document.documentElement;
-        const pallete = colorThief.getPalette(img, 3);
-        const primary = pallete[0], 
-              secondary = pallete[1];
+      const runColors = () => {
+        // Color Theif
+        const colorThief = new ColorThief();
+        const img = document.querySelector('#source-image');
 
-        const primaryColor = `rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`
-        const secondaryColor = `rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`
+        // Make sure image is finished loading
+        if (img.complete) {
+          // let root = document.documentElement;
+          // const pallete = colorThief.getPalette(img, 3);
+          // const primary = pallete[0], 
+          //       secondary = pallete[1];
+
+          // const primaryColor = `rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`
+          // const secondaryColor = `rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`
 
 
-        console.log(primaryColor, secondaryColor)
+          // console.log(primaryColor, secondaryColor)
 
-        root.style.setProperty('--mdc-theme-primary', primaryColor);
-        root.style.setProperty('--mdc-theme-secondary', secondaryColor);
+          // root.style.setProperty('--mdc-theme-primary', primaryColor);
+          // root.style.setProperty('--mdc-theme-secondary', secondaryColor);
 
-        // TODO -- make the pallet and have the usdr select which colors they want
+          // // TODO -- make the pallet and have the user select which colors they want
+        }
+        else {
+          img.addEventListener('load', function() {
+            // same code as above
+            let root = document.documentElement;
+            const pallete = colorThief.getPalette(img, 3);
 
-      } else {
-        image.addEventListener('load', function() {
-          colorThief.getColor(img);
-        });
+            // make 0 bg bc its usually duller/background ?
+            const primary = pallete[1], 
+                  secondary = pallete[2],
+                  bg = pallete[0];
+
+            const primaryColor = `rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`
+            const secondaryColor = `rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`
+            const bgColor = `rgb(${bg[0]}, ${bg[1]}, ${bg[2]})`
+
+            root.style.setProperty('--mdc-theme-primary', primaryColor);
+            root.style.setProperty('--mdc-theme-secondary', secondaryColor);
+            root.style.setProperty('--mdc-theme-background', bgColor);
+
+            // randomize border radius on small components
+            root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
+          });
+        }
       }
+    
   </script>
 
 </html>
