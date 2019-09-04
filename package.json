@@ -1,0 +1,19 @@
+{
+  "name": "theme-of-the-day",
+  "version": "0.1.0",
+  "description": "Build a Material Theme based on an image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "material",
+    "design",
+    "mdc-web"
+  ],
+  "author": "Una Kravets",
+  "license": "ISC",
+  "dependencies": {
+    "colorthief": "^2.3.0"
+  }
+}

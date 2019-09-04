@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  padding: 2rem;
+}
+
+.sidebar {
+  width: 400px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.main-content {
+  position: relative;
+}
+
+.source img {
+  width: 100%;
+}
+
+/* Styling components within main content */
