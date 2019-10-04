@@ -17,12 +17,109 @@
 
 <body>
   <div class="sidebar">
-    <h1 class="mdc-typography--headline5">Theme of the Day</h1>
+    <h1 class="mdc-typography--headline5 demo-title">
+      <svg class="material-logo" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path d="M23.8461538,12 C23.8461538,5.46307692 18.5369231,0.153846154 12,0.153846154 C5.46307692,0.153846154 0.153846154,5.46307692
+          0.153846154,12 C0.153846154,18.5369231 5.46307692,23.8461538 12,23.8461538 C18.5369231,23.8461538 23.8461538,18.5369231 23.8461538,12
+          Z M4.46153846,18.0738462 C3.11538462,16.4153846 2.30769231,14.3046154 2.30769231,12 C2.30769231,9.70615385 3.12615385,7.60615385
+          4.46153846,5.93692308 L4.46153846,18.0738462 Z M18.0738462,4.46153846 L5.92615385,4.46153846 C7.58461538,3.11538462 9.69538462,2.30769231
+          12,2.30769231 C14.3046154,2.30769231 16.4153846,3.11538462 18.0738462,4.46153846 Z M12,14.7246154 L7.95076923,6.61538462 L16.06,6.61538462
+          L12,14.7246154 Z M17.3846154,8.76923077 L17.3846154,17.3846154 L13.0769231,17.3846154 L17.3846154,8.76923077 Z M10.9230769,17.3846154
+          L6.61538462,17.3846154 L6.61538462,8.76923077 L10.9230769,17.3846154 Z M18.0738462,19.5384615 C16.4046154,20.8846154 14.2938462,21.6923077
+          12,21.6923077 C9.70615385,21.6923077 7.58461538,20.8846154 5.92615385,19.5384615 L18.0738462,19.5384615 Z M21.6923077,12 C21.6923077,14.3046154
+          20.8846154,16.4153846 19.5384615,18.0738462 L19.5384615,5.93692308 C20.8738462,7.60615385 21.6923077,9.70615385 21.6923077,12 Z" id="mdc-logo-path"></path>
+        </defs>
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-29.000000, -48.000000)">
+            <g>
+              <g transform="translate(0.000000, 44.000000)">
+                <g transform="translate(29.000000, 0.000000)">
+                  <g transform="translate(0.000000, 4.000000)">
+                    <mask fill="white">
+                      <use xlink:href="#mdc-logo-path"></use>
+                    </mask>
+                    <use fill="#5F6367" fill-rule="nonzero" xlink:href="#mdc-logo-path"></use>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      Theme of the Day</h1>
     <p class="mdc-typography--body2">Build a Material Design theme based on your outfit of the day.</p>
     <div class="source">
       <input type="file" accept="image/*" id="file" onchange="loadFile(event)" class="inputfile">
       <label for="file" class="mdc-button mdc-button--raised">Choose a file</label>
       <img id="source-image" />    
+    </div>
+    <!-- Theme Summary -->
+    <div class="mdc-drawer__content drawer-content--theme-summary" style="display: block;">
+      <div class="section-header">
+        <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors" class="mdc-typography--overline" target="_blank">
+          <i class="material-icons leading-icon">colorize</i>
+          Color Scheme
+          <i class="material-icons">open_in_new</i>
+        </a>
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--primary">--mdc-theme-primary<span class="varVal">:  #6200ee;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--primary">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--on-primary">--mdc-theme-on-primary<span class="varVal">:  #fff;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--on-primary">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--secondary">--mdc-theme-secondary<span class="varVal">:  #018786;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--secondary">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--on-secondary">--mdc-theme-on-secondary<span class="varVal">:  #fff;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--on-secondary">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--error">--mdc-theme-error<span class="varVal">:  #b00020;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--error">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--on-error">--mdc-theme-on-error<span class="varVal">:  #fff;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--on-error">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--surface">--mdc-theme-surface<span class="varVal">:  #fff;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--surface">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--on-surface">--mdc-theme-on-surface<span class="varVal">:  #000;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--on-surface">
+      </div>
+      <div class="theme-summary-line">
+        <code class="theme-summary-code theme-summary-code--background">--mdc-theme-background<span class="varVal">:  #fff;</span></code>
+        <input type="color" class="theme-summary-color theme-summary-color--background">
+      </div>
+      <hr class="mdc-list-divider theme-summary-divider">
+
+      <div class="section-header">
+        <a href="https://material.io/design/shape/about-shape.html#shape-customization-tool" class="mdc-typography--overline" target="_blank">
+          <i class="material-icons leading-icon">border_style</i>
+          Shape System
+          <i class="material-icons">open_in_new</i>
+        </a>
+      </div>
+      <div class="theme-summary-line theme-shape">
+        <code class="theme-summary-code">$mdc-shape-small-component-radius:<span class="varValue">4px;</span></code>
+        <figure class="theme-summary-shape theme-summary-shape--small">S</figure>
+      </div>
+      <div class="theme-summary-line theme-shape">
+        <code class="theme-summary-code">$mdc-shape-medium-component-radius:<span class="varValue">4px;</span></code>
+        <figure class="theme-summary-shape theme-summary-shape--medium">M</figure>
+      </div>
+      <div class="theme-summary-line theme-shape">
+        <code class="theme-summary-code">$mdc-shape-large-component-radius:<span class="varValue">0px;</span></code>
+        <figure class="theme-summary-shape theme-summary-shape--large">L</figure>
+      </div>
     </div>
   </div>
 
@@ -750,76 +847,11 @@
             </ul>
           </div>
         </section>
-
       </div>
     </main>
 </body>
 
   <!-- Scripts for Color Picking -->
   <script src="node_modules/colorthief/dist/color-thief.umd.js"></script>
-  <script>
-      // Read Image
-      var loadFile = function(event) {
-        var output = document.getElementById('source-image');
-        output.src = URL.createObjectURL(event.target.files[0])
-
-        runColors()
-      };
-
-      // In case I need to convert to hex
-      const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
-        const hex = x.toString(16)
-        return hex.length === 1 ? '0' + hex : hex
-      }).join('')
-
-      const runColors = () => {
-        // Color Theif
-        const colorThief = new ColorThief();
-        const img = document.querySelector('#source-image');
-
-        // Make sure image is finished loading
-        if (img.complete) {
-          // let root = document.documentElement;
-          // const pallete = colorThief.getPalette(img, 3);
-          // const primary = pallete[0], 
-          //       secondary = pallete[1];
-
-          // const primaryColor = `rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`
-          // const secondaryColor = `rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`
-
-
-          // console.log(primaryColor, secondaryColor)
-
-          // root.style.setProperty('--mdc-theme-primary', primaryColor);
-          // root.style.setProperty('--mdc-theme-secondary', secondaryColor);
-
-          // // TODO -- make the pallet and have the user select which colors they want
-        }
-        else {
-          img.addEventListener('load', function() {
-            // same code as above
-            let root = document.documentElement;
-            const pallete = colorThief.getPalette(img, 3);
-
-            // make 0 bg bc its usually duller/background ?
-            const primary = pallete[1], 
-                  secondary = pallete[2],
-                  bg = pallete[0];
-
-            const primaryColor = `rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`
-            const secondaryColor = `rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`
-            const bgColor = `rgb(${bg[0]}, ${bg[1]}, ${bg[2]})`
-
-            root.style.setProperty('--mdc-theme-primary', primaryColor);
-            root.style.setProperty('--mdc-theme-secondary', secondaryColor);
-            root.style.setProperty('--mdc-theme-background', bgColor);
-
-            // randomize border radius on small components
-            root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
-          });
-        }
-      }
-    
-  </script>
-
+  <script src="./app.js"></script>
 </html>
