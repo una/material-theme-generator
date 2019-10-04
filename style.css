@@ -5,23 +5,38 @@
 
 body {
   display: flex;
-  padding: 2rem;
   background: var(--mdc-theme-background);
+  margin: 0;
+  padding: 0;
 }
 
 .sidebar {
-  width: 400px;
-  height: 100%;
+  width: 300px;
+  height: 100vh;
   left: 0;
   top: 0;
-}
-
-.main-content {
-  position: relative;
+  background: white;
+  border-right: 1px solid lightgray;
+  padding: 0 1rem;
+  position: fixed;
 }
 
 .source img {
-  width: 100%;
+  margin-top: 1rem;
+  height: 275px;
+  width: 275px;
+  object-fit: cover;
+  background: #fbfbfb;
+}
+
+/* Hide native web input, use label to access */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
 /* Styling components within main content */
@@ -30,11 +45,14 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 332px;
 }
 
 .main-content .column {
-  width: 420px;
   display: block;
+  margin: 0 8px;
+  flex-basis: 420px;
 }
 
 .component-section {
@@ -51,6 +69,12 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+.section-header a {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .component-wrapper {
   margin: 16px 0;
 }
@@ -65,4 +89,15 @@ body {
 /* Border/Shape */
 .mdc-button {
   border-radius: var(--mdc-shape-small)
+}
+
+/* Individual Components */
+.demo-card__primary,
+.demo-card__secondary {
+  padding: 0 16px;
+}
+
+.button-component-wrapper .mdc-button,
+.fab-component-wrapper .mdc-fab {
+  margin-right: 16px;
 }
