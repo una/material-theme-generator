@@ -1,52 +1,39 @@
-// Build out shape size visualizer
-[...document.querySelectorAll('.theme-summary-shape')].forEach((elem) => {
-  // Get background value of color component and sanitize
-  const sizeVals = getComputedStyle(elem).borderRadius
-  const node = document.createElement("span");
-  const textnode = document.createTextNode(`${sizeVals};`);
-  node.classList.add('varValue');
-  node.appendChild(textnode); 
-
-  // Append text of the element adjacent sibling to the end of the text string
-  elem.previousElementSibling.appendChild(node)
-})
-
-// TODO: Separate out these helper functions
+// Utils -- TODO: move out
 const rgbToHex = (col) => {
   if(col.charAt(0)=='r') {
     col=col.replace('rgb(','').replace(')','').split(',');
-    var r=parseInt(col[0], 10).toString(16);
-    var g=parseInt(col[1], 10).toString(16);
-    var b=parseInt(col[2], 10).toString(16);
+    var r = parseInt(col[0], 10).toString(16);
+    var g = parseInt(col[1], 10).toString(16);
+    var b = parseInt(col[2], 10).toString(16);
     r=r.length==1?'0'+r:r; g=g.length==1?'0'+g:g; b=b.length==1?'0'+b:b;
     var colHex='#'+r+g+b;
     return colHex;
   }
 }
 
-const rgbToHsl = (r, g, b) => {
-  r /= 255, g /= 255, b /= 255;
+// const rgbToHsl = (r, g, b) => {
+//   r /= 255, g /= 255, b /= 255;
 
-  var max = Math.max(r, g, b), min = Math.min(r, g, b);
-  var h, s, l = (max + min) / 2;
+//   var max = Math.max(r, g, b), min = Math.min(r, g, b);
+//   var h, s, l = (max + min) / 2;
 
-  if (max == min) {
-    h = s = 0; // achromatic
-  } else {
-    var d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+//   if (max == min) {
+//     h = s = 0; // achromatic
+//   } else {
+//     var d = max - min;
+//     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
 
-    switch (max) {
-      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-      case g: h = (b - r) / d + 2; break;
-      case b: h = (r - g) / d + 4; break;
-    }
+//     switch (max) {
+//       case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+//       case g: h = (b - r) / d + 2; break;
+//       case b: h = (r - g) / d + 4; break;
+//     }
 
-    h /= 6;
-  }
+//     h /= 6;
+//   }
 
-  return [ h, s, l ];
-}
+//   return [ h, s, l ];
+// }
 
 const hslToHex = (h, s, l) => {
   h /= 360;
@@ -76,6 +63,19 @@ const hslToHex = (h, s, l) => {
   };
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
+
+// Build out shape size visualizer
+[...document.querySelectorAll('.theme-summary-shape')].forEach((elem) => {
+  // Get background value of color component and sanitize
+  const sizeVals = getComputedStyle(elem).borderRadius
+  const node = document.createElement("span");
+  const textnode = document.createTextNode(`${sizeVals};`);
+  node.classList.add('varValue');
+  node.appendChild(textnode); 
+
+  // Append text of the element adjacent sibling to the end of the text string
+  elem.previousElementSibling.appendChild(node)
+})
 
 // Build out color variable visualizer
 const visualizeColorText = () => {
@@ -140,11 +140,8 @@ const runColors = () => {
       const primaryColor = rgbToHex(`rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`)
       const secondaryColor = rgbToHex(`rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`)
       const bgColor = rgbToHex(`rgb(${bg[0]}, ${bg[1]}, ${bg[2]})`)
-      console.log(surface)
-      const surfaceColorHSL = rgbToHsl(surface[0] * 360, surface[1] * 100, surface[2] * 100)
-      console.log(surfaceColorHSL)
-      const surfaceColor = hslToHex(surfaceColorHSL[0], surfaceColorHSL[1], surfaceColorHSL[2])
-      console.log(surfaceColor)
+      const lighterSurface = rgbToHex(`rgb(${surface[0] + 50}, ${surface[1] + 50}, ${surface[2] + 50})`)
+      const surfaceColor = lighterSurface;
 
       root.style.setProperty('--mdc-theme-primary', primaryColor)
       root.style.setProperty('--mdc-theme-secondary', secondaryColor)
