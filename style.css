@@ -1,5 +1,13 @@
 :root {
-  --mdc-theme-background: white;
+  --mdc-theme-primary: #6200ee; 
+  --mdc-theme-on-primary: #fff; 
+  --mdc-theme-secondary: #018786; 
+  --mdc-theme-on-secondary: #fff; 
+  --mdc-theme-error: #b00020; 
+  --mdc-theme-on-error: #fff; 
+  --mdc-theme-surface: #fff; 
+  --mdc-theme-on-surface: #000; 
+  --mdc-theme-background: #fff;
   --mdc-shape-small: 4px;
 }
 
@@ -11,7 +19,7 @@ body {
 }
 
 .sidebar {
-  width: 300px;
+  width: 312px;
   min-height: 100vh;
   left: 0;
   top: 0;
@@ -38,7 +46,7 @@ body {
 
 .source img {
   margin-top: 1rem;
-  min-height: 300px;
+  min-height: 312px;
   width: 100%;
   object-fit: cover;
   background: #fbfbfb;
