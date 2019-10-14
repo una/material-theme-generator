@@ -25,16 +25,16 @@ if (window.top === window) {
 
 // // Icon button toggle
 // const iconToggleEl = mainEl.querySelector('#icon-toggle-button');
-// const iconToggle = new MDCIconButtonToggle(iconToggleEl);
+// const iconToggle = mdc.iconButtonToggle.MDCIconButtonToggle.attachTo(iconToggleEl)
 // iconToggle.unbounded = true;
 
 // // Card
-// const cardPrimaryActionEls = Array.from(mainEl.querySelectorAll('.mdc-card__primary-action'));
-// cardPrimaryActionEls.forEach((el) => new MDCRipple(el));
+const cardPrimaryActionEls = Array.from(mainEl.querySelectorAll('.mdc-card__primary-action'));
+cardPrimaryActionEls.forEach((el) => mdc.ripple.MDCRipple.attachTo(el))
 
 // // Chips
 // const chipSetEls = Array.from(mainEl.querySelectorAll('.mdc-chip-set'));
-// chipSetEls.forEach((el) => new MDCChipSet(el));
+// chipSetEls.forEach((el) => mdc.chipSet.MDCChipSet.attachTo(el))
 
 // // Text field
 const textFieldEls = Array.from(mainEl.querySelectorAll('.mdc-text-field'));
@@ -62,57 +62,40 @@ checkboxEls.forEach((el) => {
 });
 
 // // Radio
-// const radioEls = Array.from(mainEl.querySelectorAll('.mdc-radio'));
-// radioEls.forEach((el) => new MDCRadio(el));
+const radioEls = Array.from(mainEl.querySelectorAll('.mdc-radio'));
+radioEls.forEach((el) => mdc.radio.MDCRadio.attachTo(el))
 
 // // Switch
 // const switchEls = Array.from(mainEl.querySelectorAll('.mdc-switch'));
 // switchEls.forEach((el) => mdc.switch.MDCSwitch.attachTo(el))
 
 // // Top app bar
-// const topAppBarEls = Array.from(mainEl.querySelectorAll('.mdc-top-app-bar'));
-// topAppBarEls.forEach((el) => new MDCTopAppBar(el));
-
-// // List
-// const listEls = Array.from(mainEl.querySelectorAll('.mdc-list'));
-// listEls.forEach((el) => {
-//   let list = new MDCList(el);
-//   list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
-//   list.singleSelection = true;
-// });
+const topAppBarEls = Array.from(mainEl.querySelectorAll('.mdc-top-app-bar'));
+topAppBarEls.forEach((el) => mdc.topAppBar.MDCTopAppBar.attachTo(el))
 
 // // Select
 // const selectEls = Array.from(mainEl.querySelectorAll('.mdc-select'));
-// selectEls.forEach((el) => new MDCSelect(el));
+// selectEls.forEach((el) => mdc.select.MDCSelect.attachTo(el))
+
 
 // // Snackbar
-// const snackbarEl = mainEl.querySelector('.mdc-snackbar');
-// new MDCSnackbar(snackbarEl);
+const snackbarEl = mainEl.querySelector('.mdc-snackbar');
+const snackbar = mdc.snackbar.MDCSnackbar.attachTo(snackbarEl)
 
 // // Dialog
-// const dialogEl = mainEl.querySelector('.mdc-dialog');
-// new MDCDialog(dialogEl);
+const dialogEl = mainEl.querySelector('.mdc-dialog');
+const dialog = mdc.dialog.MDCDialog.attachTo(dialogEl)
+
 
 // // Slider
-// const sliderEl = mainEl.querySelector('.mdc-slider');
-// const slider = new MDCSlider(sliderEl);
-// slider.value = 5;
-
-// // Menu
-// const menuEl = mainEl.querySelector('.mdc-menu');
-// const menu = new MDCMenu(menuEl);
-// menu.open = true;
-// // Override MDCMenuSurfaceFoundation so the menu never closes
-// menu.menuSurface_.foundation_.close = () => {};
-// // Focus first component when menu is done opening if not in an iframe
-// if (window.top === window) {
-//   menuEl.addEventListener('MDCMenuSurface:opened', () => document.querySelector('.mdc-button').focus());
-// }
+const sliderEl = mainEl.querySelector('.mdc-slider');
+const slider = mdc.slider.MDCSlider.attachTo(sliderEl)
+slider.value = 5;
 
 // // Tabs
-// const tabBarEl = mainEl.querySelector('.mdc-tab-bar');
-// new MDCTabBar(tabBarEl);
+const tabBarEl = mainEl.querySelector('.mdc-tab-bar');
+const tabBar = mdc.tabBar.MDCTabBar.attachTo(tabBarEl)
 
 // // Data Table
-// const dataTable = document.querySelector('.mdc-data-table');
-// new MDCDataTable(dataTable);
+const dataTableEl = document.querySelector('.mdc-data-table');
+const dataTable = mdc.dataTable.MDCDataTable.attachTo(dataTableEl)
