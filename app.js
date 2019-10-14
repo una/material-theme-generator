@@ -139,8 +139,8 @@ const runColors = () => {
 
       const primaryColor = rgbToHex(`rgb(${primary[0]}, ${primary[1]}, ${primary[2]})`)
       const secondaryColor = rgbToHex(`rgb(${secondary[0]}, ${secondary[1]}, ${secondary[2]})`)
-      const bgColor = rgbToHex(`rgb(${bg[0]}, ${bg[1]}, ${bg[2]})`)
-      const lighterSurface = rgbToHex(`rgb(${surface[0] + 50}, ${surface[1] + 50}, ${surface[2] + 50})`)
+      const bgColor = rgbToHex(`rgb(${Math.min(bg[0] + 80, 255)}, ${Math.min(bg[1] + 80, 255)}, ${Math.min(bg[2] + 80, 255)})`)
+      const lighterSurface = rgbToHex(`rgb(${Math.min(surface[0] + 80, 255)}, ${Math.min(surface[1] + 80, 255)}, ${Math.min(surface[2] + 80, 255)})`)
       const surfaceColor = lighterSurface;
 
       root.style.setProperty('--mdc-theme-primary', primaryColor)

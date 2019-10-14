@@ -1,13 +1,13 @@
 :root {
   --mdc-theme-primary: #6200ee; 
-  --mdc-theme-on-primary: #fff; 
+  --mdc-theme-on-primary: #ffffff; 
   --mdc-theme-secondary: #018786; 
-  --mdc-theme-on-secondary: #fff; 
+  --mdc-theme-on-secondary: #ffffff; 
   --mdc-theme-error: #b00020; 
-  --mdc-theme-on-error: #fff; 
-  --mdc-theme-surface: #fff; 
+  --mdc-theme-on-error: #ffffff; 
+  --mdc-theme-surface: #ffffff; 
   --mdc-theme-on-surface: #000; 
-  --mdc-theme-background: #fff;
+  --mdc-theme-background: #ffffff;
   --mdc-shape-small: 4px;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .sidebar {
-  width: 312px;
+  width: 320px;
   min-height: 100vh;
   left: 0;
   top: 0;
@@ -27,6 +27,12 @@ body {
   border-right: 1px solid lightgray;
   padding: 0 1rem;
   position: absolute;
+}
+
+.sidebar .mdc-list-divider {
+  border-bottom-color: rgba(0,0,0,.12);
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 .theme-summary-color {
@@ -46,7 +52,7 @@ body {
 
 .source img {
   margin-top: 1rem;
-  min-height: 312px;
+  min-height: 320px;
   width: 100%;
   object-fit: cover;
   background: #fbfbfb;
@@ -149,4 +155,16 @@ body {
 
 .mdc-text-field {
   width: 100%;
+}
+
+/* Missing custom prop */
+.mdc-drawer .mdc-list-item--activated,
+.mdc-drawer .mdc-list-item--selected, 
+.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+  color: var(--mdc-theme-primary);
+}
+
+/* Missing custom prop */
+.mdc-top-app-bar {
+  color: var(--mdc-theme-on-primary);
 }
