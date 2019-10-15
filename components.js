@@ -5,7 +5,7 @@ const buttonEls = Array.from(mainEl.querySelectorAll('.mdc-button, .mdc-fab'));
 buttonEls.forEach((el) => mdc.ripple.MDCRipple.attachTo(el))
 
 // List
-const listEls = Array.from(mainEl.querySelectorAll('.mdc-list'));
+const listEls = Array.from(mainEl.querySelectorAll('.demo-menu .mdc-list'));
 listEls.forEach((el) => {
   let list = mdc.list.MDCList.attachTo(el)
   list.listElements.map((listItemEl) => mdc.ripple.MDCRipple.attachTo(listItemEl))
@@ -24,17 +24,17 @@ if (window.top === window) {
 }
 
 // // Icon button toggle
-// const iconToggleEl = mainEl.querySelector('#icon-toggle-button');
-// const iconToggle = mdc.iconButtonToggle.MDCIconButtonToggle.attachTo(iconToggleEl)
-// iconToggle.unbounded = true;
+const iconToggleEl = mainEl.querySelector('#icon-toggle-button');
+const iconToggle = mdc.iconButton.MDCIconButtonToggle.attachTo(iconToggleEl)
+iconToggle.unbounded = true;
 
 // // Card
 const cardPrimaryActionEls = Array.from(mainEl.querySelectorAll('.mdc-card__primary-action'));
 cardPrimaryActionEls.forEach((el) => mdc.ripple.MDCRipple.attachTo(el))
 
 // // Chips
-// const chipSetEls = Array.from(mainEl.querySelectorAll('.mdc-chip-set'));
-// chipSetEls.forEach((el) => mdc.chipSet.MDCChipSet.attachTo(el))
+const chipSetEls = Array.from(mainEl.querySelectorAll('.mdc-chip-set'));
+chipSetEls.forEach((el) => mdc.chips.MDCChipSet.attachTo(el))
 
 // // Text field
 const textFieldEls = Array.from(mainEl.querySelectorAll('.mdc-text-field'));
@@ -44,8 +44,6 @@ textFieldEls.forEach((el) => {
     textField.value = 'Input text';
   }
 });
-// const helperTextEls = Array.from(mainEl.querySelectorAll('.mdc-text-field-helper-text'));
-// helperTextEls.forEach((el) => mdc.textFieldHelperText.MDCTextFieldHelperText.attachTo(el))
 
 // // Linear progress
 const linearProgressEl = mainEl.querySelector('.mdc-linear-progress');
@@ -66,16 +64,16 @@ const radioEls = Array.from(mainEl.querySelectorAll('.mdc-radio'));
 radioEls.forEach((el) => mdc.radio.MDCRadio.attachTo(el))
 
 // // Switch
-// const switchEls = Array.from(mainEl.querySelectorAll('.mdc-switch'));
-// switchEls.forEach((el) => mdc.switch.MDCSwitch.attachTo(el))
+const switchEls = Array.from(mainEl.querySelectorAll('.mdc-switch'));
+switchEls.forEach((el) => mdc.switchControl.MDCSwitch.attachTo(el))
 
 // // Top app bar
 const topAppBarEls = Array.from(mainEl.querySelectorAll('.mdc-top-app-bar'));
 topAppBarEls.forEach((el) => mdc.topAppBar.MDCTopAppBar.attachTo(el))
 
 // // Select
-// const selectEls = Array.from(mainEl.querySelectorAll('.mdc-select'));
-// selectEls.forEach((el) => mdc.select.MDCSelect.attachTo(el))
+const selectEls = Array.from(mainEl.querySelectorAll('.mdc-select'));
+selectEls.forEach((el) => mdc.select.MDCSelect.attachTo(el))
 
 
 // // Snackbar

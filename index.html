@@ -248,7 +248,7 @@
             </div>
             <div class="component-wrapper">
               <div class="mdc-menu-surface--anchor">
-                <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open" tabindex="-1" style="transform-origin: center bottom; left: 0px; bottom: 0px; max-height: 1066px;">
+                <div class="mdc-menu mdc-menu-surface mdc-menu-surface--open demo-menu" tabindex="-1" style="transform-origin: center bottom; left: 0px; bottom: 0px; max-height: 1066px;">
                   <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
                     <li class="mdc-list-item mdc-ripple-upgraded" role="menuitem" tabindex="-1">
                       <span class="mdc-list-item__text">Body 2</span>
@@ -465,30 +465,55 @@
               </a>
             </div>
             <div class="component-wrapper">
-              <div class="mdc-select mdc-ripple-upgraded">
-                <input type="hidden" name="enhanced-select" value="">
-                <i class="mdc-select__dropdown-icon"></i>
-                <div class="mdc-select__selected-text" role="button" tabindex="0"></div>
-                
-                <span class="mdc-floating-label">Label</span>
-                <div class="mdc-line-ripple"></div>
+              <div class="mdc-select demo-width-class">
+              <input type="hidden" name="enhanced-select">
+              <i class="mdc-select__dropdown-icon"></i>
+              <div class="mdc-select__selected-text"></div>
+              <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                <ul class="mdc-list">
+                  <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                  <li class="mdc-list-item" data-value="grains">
+                    Grains
+                  </li>
+                  <li class="mdc-list-item" data-value="vegetables">
+                    Vegetables
+                  </li>
+                  <li class="mdc-list-item" data-value="fruit">
+                    Fruit
+                  </li>
+                </ul>
               </div>
+              <span class="mdc-floating-label">Pick a Food Group</span>
+              <div class="mdc-line-ripple"></div>
             </div>
-          </section>
+        </section>
 
           <!-- Select -->
           <section class="component-section select-component">
             <div class="section-header"><!-- Hold space for layout --></div>
             <div class="component-wrapper">
-              <div class="mdc-select mdc-select--outlined">
-                <input type="hidden" name="enhanced-outlined-select">
+              <div class="mdc-select mdc-select--outlined custom-enhanced-select-width custom-select-outline-color">
                 <i class="mdc-select__dropdown-icon"></i>
-                <div class="mdc-select__selected-text" role="button" tabindex="0"></div>
-                
-                <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                <div id="screenshot-selected-text" class="mdc-select__selected-text" role="button" aria-haspopup="listbox"
+                     aria-labelledby="screenshot-select-label screenshot-selected-text"></div>
+                <div class="mdc-select__menu mdc-menu mdc-menu-surface custom-enhanced-select-width" role="listbox">
+                  <ul class="mdc-list">
+                    <li class="mdc-list-item mdc-list-item--selected" aria-selected="true" data-value=""></li>
+                    <li class="mdc-list-item" data-value="grains">
+                      Grains
+                    </li>
+                    <li class="mdc-list-item" data-value="vegetables">
+                      Vegetables
+                    </li>
+                    <li class="mdc-list-item" data-value="fruit">
+                      Fruit
+                    </li>
+                  </ul>
+                </div>
+                <div class="mdc-notched-outline">
                   <div class="mdc-notched-outline__leading"></div>
                   <div class="mdc-notched-outline__notch">
-                    <label class="mdc-floating-label" style="">Label</label>
+                    <span id="screenshot-select-label" class="mdc-floating-label">Pick a Food Group</span>
                   </div>
                   <div class="mdc-notched-outline__trailing"></div>
                 </div>
