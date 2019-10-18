@@ -11,30 +11,6 @@ const rgbToHex = (col) => {
   }
 }
 
-// const rgbToHsl = (r, g, b) => {
-//   r /= 255, g /= 255, b /= 255;
-
-//   var max = Math.max(r, g, b), min = Math.min(r, g, b);
-//   var h, s, l = (max + min) / 2;
-
-//   if (max == min) {
-//     h = s = 0; // achromatic
-//   } else {
-//     var d = max - min;
-//     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-//     switch (max) {
-//       case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-//       case g: h = (b - r) / d + 2; break;
-//       case b: h = (r - g) / d + 4; break;
-//     }
-
-//     h /= 6;
-//   }
-
-//   return [ h, s, l ];
-// }
-
 const hslToHex = (h, s, l) => {
   h /= 360;
   s /= 100;
@@ -65,20 +41,24 @@ const hslToHex = (h, s, l) => {
 }
 
 // Build out shape size visualizer
-[...document.querySelectorAll('.theme-summary-shape')].forEach((elem) => {
-  // Get background value of color component and sanitize
-  const sizeVals = getComputedStyle(elem).borderRadius
-  const node = document.createElement("span");
-  const textnode = document.createTextNode(`${sizeVals};`);
-  node.classList.add('varValue');
-  node.appendChild(textnode); 
+const visualizeShapeVal = () => {
+  [...document.querySelectorAll('.theme-summary-shape')].forEach((elem) => {
+    let shapeVal = elem.parentElement.firstElementChild.innerText.replace(/:.*$/,"")
+    const currentShape = getComputedStyle(document.documentElement).getPropertyValue(shapeVal)
+    elem.value = currentShape.trim()
+    elem.parentElement.querySelector('.varVal').innerText =  `${currentShape};`
 
-  // Append text of the element adjacent sibling to the end of the text string
-  elem.previousElementSibling.appendChild(node)
-})
+    elem.addEventListener('change', (e) => {
+        shapeVal = e.target.value
+        const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
+        e.target.parentElement.querySelector('.varVal').innerText = `${shapeVal};`
+        document.documentElement.style.setProperty(varVal, shapeVal);
+    })
+  })
+}
 
 // Build out color variable visualizer
-const visualizeColorText = () => {
+const visualizeColorVal = () => {
   [...document.querySelectorAll('.theme-summary-color')].forEach((elem) => {
     let colorVal = elem.parentElement.firstElementChild.innerText.replace(/:.*$/,"")
     const currentColor = getComputedStyle(document.documentElement).getPropertyValue(colorVal)
@@ -152,9 +132,23 @@ const runColors = () => {
       root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
 
       // Update colors in theme summary
-      visualizeColorText()
+      visualizeColorVal()
+
+      // Update shape values in theme summary
+      visualizeShapeVal()
+
+      // Display Theme button
+      downloadBtn.classList.remove('hidden')
     });
   }
 }
 
-visualizeColorText()
+visualizeColorVal()
+
+// Save the theme
+const downloadBtn = document.querySelector('.save-button')
+downloadBtn.addEventListener('click', () => {
+  const colorTheme = document.querySelector('.color-theme-summaries').innerText
+  const shapeTheme = document.querySelector('.shape-theme-summaries').innerText
+  console.log(colorTheme + shapeTheme)
+})

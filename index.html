@@ -52,6 +52,7 @@
     <div class="source">
       <input type="file" accept="image/*" id="file" onchange="loadFile(event)" class="inputfile">
       <label for="file" class="mdc-button mdc-button--raised">Choose a file</label>
+      <button class="mdc-button mdc-button--raised hidden save-button">Save & Share Theme</button>
       <img id="source-image" />    
     </div>
     <!-- Theme Summary -->
@@ -63,41 +64,43 @@
           <i class="material-icons">open_in_new</i>
         </a>
       </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--background">--mdc-theme-background<span class="varVal">:  #ffffff;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--background">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--primary">--mdc-theme-primary<span class="varVal">:  #6200ee;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--primary">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--on-primary">--mdc-theme-on-primary<span class="varVal">:  #ffffff;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--on-primary">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--secondary">--mdc-theme-secondary<span class="varVal">:  #018786;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--secondary">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--on-secondary">--mdc-theme-on-secondary<span class="varVal">:  #ffffff;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--on-secondary">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--error">--mdc-theme-error<span class="varVal">:  #b00020;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--error">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--on-error">--mdc-theme-on-error<span class="varVal">:  #ffffff;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--on-error">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--surface">--mdc-theme-surface<span class="varVal">:  #ffffff;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--surface">
-      </div>
-      <div class="theme-summary-line">
-        <code class="theme-summary-code theme-summary-code--on-surface">--mdc-theme-on-surface<span class="varVal">:  #000;</span></code>
-        <input type="color" class="theme-summary-color theme-summary-color--on-surface">
+      <div class="color-theme-summaries">
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--background">--mdc-theme-background<span class="varVal">:  #ffffff;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--background">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--primary">--mdc-theme-primary<span class="varVal">:  #6200ee;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--primary">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--on-primary">--mdc-theme-on-primary<span class="varVal">:  #ffffff;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--on-primary">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--secondary">--mdc-theme-secondary<span class="varVal">:  #018786;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--secondary">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--on-secondary">--mdc-theme-on-secondary<span class="varVal">:  #ffffff;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--on-secondary">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--error">--mdc-theme-error<span class="varVal">:  #b00020;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--error">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--on-error">--mdc-theme-on-error<span class="varVal">:  #ffffff;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--on-error">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--surface">--mdc-theme-surface<span class="varVal">:  #ffffff;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--surface">
+        </div>
+        <div class="theme-summary-line">
+          <code class="theme-summary-code theme-summary-code--on-surface">--mdc-theme-on-surface<span class="varVal">:  #000;</span></code>
+          <input type="color" class="theme-summary-color theme-summary-color--on-surface">
+        </div>
       </div>
       <hr class="mdc-list-divider theme-summary-divider">
 
@@ -108,17 +111,19 @@
           <i class="material-icons">open_in_new</i>
         </a>
       </div>
-      <div class="theme-summary-line theme-shape">
-        <code class="theme-summary-code">$mdc-shape-small-component-radius:<span class="varValue">4px;</span></code>
-        <figure class="theme-summary-shape theme-summary-shape--small">S</figure>
-      </div>
-      <div class="theme-summary-line theme-shape">
-        <code class="theme-summary-code">$mdc-shape-medium-component-radius:<span class="varValue">4px;</span></code>
-        <figure class="theme-summary-shape theme-summary-shape--medium">M</figure>
-      </div>
-      <div class="theme-summary-line theme-shape">
-        <code class="theme-summary-code">$mdc-shape-large-component-radius:<span class="varValue">0px;</span></code>
-        <figure class="theme-summary-shape theme-summary-shape--large">L</figure>
+      <div class="shape-theme-summaries">
+        <div class="theme-summary-line theme-shape">
+          <code class="theme-summary-code">--mdc-shape-small: <span class="varVal">4px;</span></code>
+          <figure class="theme-summary-shape theme-summary-shape--small"></figure>
+        </div>
+        <div class="theme-summary-line theme-shape">
+          <code class="theme-summary-code">--mdc-shape-medium: <span class="varVal">4px;</span></code>
+          <figure class="theme-summary-shape theme-summary-shape--medium"></figure>
+        </div>
+        <div class="theme-summary-line theme-shape">
+          <code class="theme-summary-code">--mdc-shape-large: <span class="varVal">0px;</span></code>
+          <figure class="theme-summary-shape theme-summary-shape--large"></figure>
+        </div>
       </div>
     </div>
   </div>

@@ -9,6 +9,9 @@
   --mdc-theme-on-surface: #000; 
   --mdc-theme-background: #ffffff;
   --mdc-shape-small: 4px;
+  --mdc-shape-medium: 4px;
+  --mdc-shape-large: 0px;
+
 }
 
 body {
@@ -45,6 +48,18 @@ body {
   padding: 0;
   width: 42px;
   height: 26px;
+}
+
+.theme-summary-shape--small:after {
+  content: 'S'
+}
+
+.theme-summary-shape--medium:after {
+  content: 'M'
+}
+
+.theme-summary-shape--large:after {
+  content: 'L'
 }
 
 .demo-title {
@@ -170,6 +185,10 @@ body {
 
 .menu-section {
   height: 250px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Missing custom prop */
