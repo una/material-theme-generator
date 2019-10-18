@@ -11,14 +11,21 @@
   --mdc-shape-small: 4px;
   --mdc-shape-medium: 4px;
   --mdc-shape-large: 0px;
-
+  --monospace-font-family: 'Roboto Mono', monospace;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 body {
   display: flex;
   background: var(--mdc-theme-background);
   margin: 0;
   padding: 0;
+}
+
+.theme-summary-line {
+  font-family: var(--monospace-font-family);
+  font-size: 14px;
 }
 
 .sidebar {
@@ -51,15 +58,34 @@ body {
 }
 
 .theme-summary-shape--small:after {
-  content: 'S'
+  content: 'S';
+  border-radius: var(--mdc-shape-small);
 }
 
 .theme-summary-shape--medium:after {
-  content: 'M'
+  content: 'M';
+  border-radius: var(--mdc-shape-medium);
 }
 
 .theme-summary-shape--large:after {
-  content: 'L'
+  content: 'L';
+  border-radius: var(--mdc-shape-large);
+}
+
+.theme-summary-shape--small:after,
+.theme-summary-shape--medium:after,
+.theme-summary-shape--large:after {
+  border: 1px solid;
+  width: 42px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.theme-summary-shape {
+  margin: 0;
 }
 
 .demo-title {
