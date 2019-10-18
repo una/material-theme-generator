@@ -42,16 +42,18 @@ const hslToHex = (h, s, l) => {
 
 // Build out shape size visualizer
 const visualizeShapeVal = () => {
-  [...document.querySelectorAll('.theme-summary-shape')].forEach((elem) => {
-    let shapeVal = elem.parentElement.firstElementChild.innerText.replace(/:.*$/,"")
+  [...document.querySelectorAll('.theme-shape')].forEach((elem) => {
+    console.log(elem)
+    let shapeVal = elem.firstElementChild.innerText.replace(/:.*$/,"")
     const currentShape = getComputedStyle(document.documentElement).getPropertyValue(shapeVal)
-    elem.value = currentShape.trim()
-    elem.parentElement.querySelector('.varVal').innerText =  `${currentShape};`
+    elem.parentElement.querySelector('.varVal').value =  `${currentShape};`
 
+    // On Input Update
     elem.addEventListener('change', (e) => {
         shapeVal = e.target.value
-        const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
-        e.target.parentElement.querySelector('.varVal').innerText = `${shapeVal};`
+        console.log(shapeVal)
+        // const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
+        // e.target.parentElement.querySelector('.varVal').value = `${shapeVal}`
         document.documentElement.style.setProperty(varVal, shapeVal);
     })
   })
@@ -65,6 +67,7 @@ const visualizeColorVal = () => {
     elem.value = currentColor.trim()
     elem.parentElement.querySelector('.varVal').innerText =  `: ${currentColor};`
 
+    // On Input Update
     elem.addEventListener('change', (e) => {
         colorVal = e.target.value
         const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
