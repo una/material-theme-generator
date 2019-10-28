@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Theme of the Day</title>
+  <title>Material Them Generator</title>
 
   <!-- Material via CDN -->
   <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
@@ -47,8 +47,8 @@
           </g>
         </g>
       </svg>
-      Theme of the Day</h1>
-    <p class="mdc-typography--body2">Build a Material Design theme based on your outfit of the day.</p>
+      Material Theme Generator</h1>
+    <p class="mdc-typography--body2">Build a Material Design theme based on the color pallete of any image.</p>
     <div class="source">
       <input type="file" accept="image/*" id="file" onchange="loadFile(event)" class="inputfile">
       <label for="file" class="mdc-button mdc-button--raised">Choose a file</label>
@@ -103,7 +103,7 @@
         </div>
       </div>
       <hr class="mdc-list-divider theme-summary-divider">
-
+      <!-- Shape -->
       <div class="section-header">
         <a href="https://material.io/design/shape/about-shape.html#shape-customization-tool" class="mdc-typography--overline" target="_blank">
           <i class="material-icons leading-icon">border_style</i>
@@ -124,6 +124,22 @@
           <code class="theme-summary-code">--mdc-shape-large: <span class="varVal">0px;</span></code>
           <figure class="theme-summary-shape theme-summary-shape--large"></figure>
         </div>
+      </div>
+  
+      <hr class="mdc-list-divider theme-summary-divider">
+
+      <!-- Type -->
+      <div class="section-header">
+        <a href="https://material.io/design/typography/the-type-system.html" class="mdc-typography--overline" target="_blank">
+          <i class="material-icons leading-icon">text_fields</i>
+          Typography Scale
+          <i class="material-icons">open_in_new</i>
+        </a>
+      </div>
+      <div class="typography-callout">
+        <code class="theme-summary-code">--mdc-typography--font-family:
+        <span class="font-name varVal">Roboto, sans-serif</span>;</code>
+        <a class="font-link mdc-typography--button" target="_blank" href="https://fonts.google.com/specimen/Roboto">See on Google Fonts <i class="material-icons">open_in_new</i></a>
       </div>
     </div>
   </div>

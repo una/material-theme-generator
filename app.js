@@ -145,6 +145,10 @@ const runColors = () => {
 
 visualizeColorVal()
 
+// Update Typeface
+const fontFamily = 'Roboto'
+const fontLink = `<link href="https://fonts.googleapis.com/css?family=${fontFamily}&amp;display=swap" rel="stylesheet">`
+
 // Save the theme (utility)
 function download(filename, text) {
   var element = document.createElement('a');

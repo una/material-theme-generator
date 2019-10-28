@@ -1,0 +1,42 @@
+/* Border/Shape */
+.mdc-button,
+.mdc-text-field {
+  border-radius: var(--mdc-shape-small);
+}  
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing,
+.mdc-select--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-radius: 0 var(--mdc-shape-small) var(--mdc-shape-small) 0;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading,
+.mdc-select--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+  border-radius: var(--mdc-shape-small) 0 0 var(--mdc-shape-small);
+}
+
+.mdc-select, .mdc-select__native-control {
+  border-radius: var(--mdc-shape-small) var(--mdc-shape-small) 0 0;
+}
+
+/* Color */
+.mdc-drawer .mdc-list-item--activated,
+.mdc-drawer .mdc-list-item--selected, 
+.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
+  color: var(--mdc-theme-primary);
+}
+
+.mdc-top-app-bar {
+  color: var(--mdc-theme-on-primary);
+}
+
+/* Missing custom prop on selected item, adding pseudo as background to make it work w/opacity */
+.mdc-data-table__row--selected {
+  background: none;
+}
+
+.mdc-data-table__row--selected:after {
+  content: '';
+  background: var(--mdc-theme-primary);
+  opacity: 0.12;
+}
+

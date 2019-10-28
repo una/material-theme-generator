@@ -1,19 +1,5 @@
-:root {
-  --mdc-theme-primary: #6200ee; 
-  --mdc-theme-on-primary: #ffffff; 
-  --mdc-theme-secondary: #018786; 
-  --mdc-theme-on-secondary: #ffffff; 
-  --mdc-theme-error: #b00020; 
-  --mdc-theme-on-error: #ffffff; 
-  --mdc-theme-surface: #ffffff; 
-  --mdc-theme-on-surface: #000; 
-  --mdc-theme-background: #ffffff;
-  --mdc-shape-small: 4px;
-  --mdc-shape-medium: 4px;
-  --mdc-shape-large: 0px;
-  --monospace-font-family: 'Roboto Mono', monospace;
-}
-
+@import url('vars.css');
+@import url('bandaids.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 body {
@@ -29,7 +15,11 @@ body {
 }
 
 .sidebar {
-  width: 410px;
+  --demoGray: #eeeeee;
+  --demoPrimary: #6200ee;
+  
+  min-width: 350px;
+  max-width: 350px;
   left: 0;
   top: 0;
   background: white;
@@ -42,6 +32,10 @@ body {
   border-bottom-color: rgba(0,0,0,.12);
   margin-top: 16px;
   margin-bottom: 8px;
+}
+
+.drawer-content--theme-summary {
+  height: auto;
 }
 
 .theme-summary-line {
@@ -82,10 +76,62 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
+  background: var(--demoGray);
 }
 
 .theme-summary-shape {
   margin: 0;
+}
+
+.section-header {
+  display: flex;
+  height: 36px;
+  font-family: Roboto, sans-serif;
+}
+  
+.section-header a {
+  display: flex;
+  align-items: center;
+}
+  
+.section-header a:hover, 
+.section-header a:focus {
+  text-decoration: none;
+}
+  
+.section-header .material-icons {
+  font-size: 1rem;
+  padding: 8px;
+}
+
+.typography-callout {
+  padding: 16px;
+  border: 1px solid;
+  background-color: var(--demoGray);
+  display: block;
+}
+
+.font-link {
+  font-size: 12px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: -16px;
+  color: var(--demoPrimary);
+}
+
+.font-link i {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.varVal {
+  font-weight: 600;
+}
+
+.material-icons.leading-icon {
+  padding-left: 0;
 }
 
 .demo-title {
@@ -163,11 +209,6 @@ body {
   position: relative;
 }
 
-/* Border/Shape */
-.mdc-button {
-  border-radius: var(--mdc-shape-small)
-}
-
 /* Individual Components */
 .demo-card__primary,
 .demo-card__secondary {
@@ -215,16 +256,4 @@ body {
 
 .hidden {
   display: none;
-}
-
-/* Missing custom prop */
-.mdc-drawer .mdc-list-item--activated,
-.mdc-drawer .mdc-list-item--selected, 
-.mdc-drawer .mdc-list-item--activated .mdc-list-item__graphic {
-  color: var(--mdc-theme-primary);
-}
-
-/* Missing custom prop */
-.mdc-top-app-bar {
-  color: var(--mdc-theme-on-primary);
 }

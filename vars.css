@@ -1,0 +1,15 @@
+:root {
+  --mdc-theme-primary: #6200ee; 
+  --mdc-theme-on-primary: #ffffff; 
+  --mdc-theme-secondary: #018786; 
+  --mdc-theme-on-secondary: #ffffff; 
+  --mdc-theme-error: #b00020; 
+  --mdc-theme-on-error: #ffffff; 
+  --mdc-theme-surface: #ffffff; 
+  --mdc-theme-on-surface: #000; 
+  --mdc-theme-background: #ffffff;
+  --mdc-shape-small: 4px;
+  --mdc-shape-medium: 4px;
+  --mdc-shape-large: 0px;
+  --monospace-font-family: 'Roboto Mono', monospace;
+}
