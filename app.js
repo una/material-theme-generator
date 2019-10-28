@@ -42,17 +42,17 @@ const hslToHex = (h, s, l) => {
 
 // Build out shape size visualizer
 const visualizeShapeVal = () => {
-  [...document.querySelectorAll('.theme-summary-shape')].forEach((elem) => {
-    let shapeVal = elem.parentElement.firstElementChild.innerText.replace(/:.*$/,"")
-    const currentShape = getComputedStyle(document.documentElement).getPropertyValue(shapeVal)
-    elem.value = currentShape.trim()
-    elem.parentElement.querySelector('.varVal').innerText =  `${currentShape};`
+  [...document.querySelectorAll('.shapeVal')].forEach((elem) => {
+    let shapeName = elem.parentElement.innerText.replace(/:.*$/,"")
+    const currentShapeVal = getComputedStyle(document.documentElement).getPropertyValue(shapeName)
+    elem.value = currentShapeVal.replace(/\D/g, '')
 
     elem.addEventListener('change', (e) => {
         shapeVal = e.target.value
-        const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
-        e.target.parentElement.querySelector('.varVal').innerText = `${shapeVal};`
-        document.documentElement.style.setProperty(varVal, shapeVal);
+        console.log(shapeVal)
+        // const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
+        // e.target.parentElement.querySelector('.shapeVal').value = `${shapeVal};`
+        // document.documentElement.style.setProperty(varVal, shapeVal);
     })
   })
 }

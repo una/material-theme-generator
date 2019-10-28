@@ -130,6 +130,10 @@ body {
   font-weight: 600;
 }
 
+.shapeVal {
+  width: 2rem;
+}
+
 .material-icons.leading-icon {
   padding-left: 0;
 }
