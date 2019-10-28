@@ -145,10 +145,28 @@ const runColors = () => {
 
 visualizeColorVal()
 
-// Save the theme
+// Save the theme (utility)
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+// Start file download on button click
 const downloadBtn = document.querySelector('.save-button')
 downloadBtn.addEventListener('click', () => {
   const colorTheme = document.querySelector('.color-theme-summaries').innerText
   const shapeTheme = document.querySelector('.shape-theme-summaries').innerText
   console.log(colorTheme + shapeTheme)
+  download("style.css", `:root {
+${colorTheme}
+${shapeTheme}
+}`);
 })
