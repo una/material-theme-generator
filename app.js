@@ -46,6 +46,8 @@ const visualizeShapeVal = () => {
     let shapeName = elem.parentElement.innerText.replace(/:.*$/,"")
     const currentShapeVal = getComputedStyle(document.documentElement).getPropertyValue(shapeName)
     elem.value = currentShapeVal.replace(/\D/g, '')
+    // hidden char for text selection to save theme
+    elem.textContent = currentShapeVal.replace(/\D/g, '');
 
     elem.addEventListener('change', (e) => {
       shapeVal = e.target.value
@@ -143,6 +145,7 @@ const runColors = () => {
 }
 
 visualizeColorVal()
+visualizeShapeVal()
 
 // Update Typeface
 const fontFamily = 'Roboto'
@@ -166,7 +169,7 @@ function download(filename, text) {
 const downloadBtn = document.querySelector('.save-button')
 downloadBtn.addEventListener('click', () => {
   const colorTheme = document.querySelector('.color-theme-summaries').innerText
-  const shapeTheme = document.querySelector('.shape-theme-summaries').innerText
+  const shapeTheme = document.querySelector('.shape-theme-summaries').textContent.replace(/ /g,'')
   console.log(colorTheme + shapeTheme)
   download("style.css", `:root {
 ${colorTheme}
