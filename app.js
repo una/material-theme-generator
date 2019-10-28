@@ -48,11 +48,8 @@ const visualizeShapeVal = () => {
     elem.value = currentShapeVal.replace(/\D/g, '')
 
     elem.addEventListener('change', (e) => {
-        shapeVal = e.target.value
-        console.log(shapeVal)
-        // const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
-        // e.target.parentElement.querySelector('.shapeVal').value = `${shapeVal};`
-        // document.documentElement.style.setProperty(varVal, shapeVal);
+      shapeVal = e.target.value
+      document.documentElement.style.setProperty(shapeName, `${shapeVal}px`);
     })
   })
 }
