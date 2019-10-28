@@ -18,6 +18,15 @@
   border-radius: var(--mdc-shape-small) var(--mdc-shape-small) 0 0;
 }
 
+.mdc-card,
+.mdc-dialog .mdc-dialog__surface {
+  border-radius: var(--mdc-shape-medium);
+}
+
+.mdc-drawer {
+  border-radius: 0 var(--mdc-shape-large) var(--mdc-shape-large) 0;
+}
+
 /* Color */
 .mdc-drawer .mdc-list-item--activated,
 .mdc-drawer .mdc-list-item--selected, 

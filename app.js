@@ -128,8 +128,10 @@ const runColors = () => {
       root.style.setProperty('--mdc-theme-background', bgColor)
       root.style.setProperty('--mdc-theme-surface', surfaceColor)
 
-      // randomize border radius on small components
+      // randomize border radius on components
       root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
+      root.style.setProperty('--mdc-shape-medium', Math.floor(Math.random()*20)+'px');
+      root.style.setProperty('--mdc-shape-large', Math.floor(Math.random()*20)+'px');
 
       // Update colors in theme summary
       visualizeColorVal()
