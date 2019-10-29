@@ -43,9 +43,9 @@
   background: none;
 }
 
-.mdc-data-table__row--selected:after {
-  content: '';
-  background: var(--mdc-theme-primary);
-  opacity: 0.12;
+/* this is such a hack to get RGBA working with hex vars by 
+layering background colors. You can layer as many gradients 
+as you want, but you can't layer solid colors, so here we are. */
+.mdc-data-table__row--selected {
+  background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), var(--mdc-theme-primary)
 }
-

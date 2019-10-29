@@ -1,6 +1,6 @@
 @import url('vars.css');
 @import url('bandaids.css');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,700&display=swap');
 
 body {
   display: flex;
@@ -9,14 +9,15 @@ body {
   padding: 0;
 }
 
-.theme-summary-line {
+.theme-summary-line,
+code {
   font-family: var(--monospace-font-family);
   font-size: 14px;
 }
-
 .sidebar {
   --demoGray: #eeeeee;
   --demoPrimary: #6200ee;
+  --monospace-font-family: 'Roboto Mono', monospace;
   
   min-width: 350px;
   max-width: 350px;
@@ -69,13 +70,14 @@ body {
 .theme-summary-shape--small:after,
 .theme-summary-shape--medium:after,
 .theme-summary-shape--large:after {
+  color: #353535;
   border: 1px solid;
   width: 42px;
-  height: 20px;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   background: var(--demoGray);
 }
 
@@ -128,6 +130,7 @@ body {
 
 .varVal {
   font-weight: 600;
+  font-family: var(--monospace-font-family);
 }
 
 .shapeVal {
