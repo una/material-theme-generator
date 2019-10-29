@@ -175,7 +175,7 @@ ${shapeTheme}
 }`);
 })
 
-// Randomize values
+// Randomize Shape
 const randomizeShape = () => {
   const root = document.documentElement;
   root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
@@ -183,6 +183,13 @@ const randomizeShape = () => {
   root.style.setProperty('--mdc-shape-large', Math.floor(Math.random()*20)+'px');
 }
 
+// Randomize values
+document.querySelector('.randomize-shape').addEventListener('click', () => {
+  randomizeShape()
+  visualizeShapeVal()
+})
+
+// Randomize Color
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -206,8 +213,20 @@ document.querySelector('.randomize-colors').addEventListener('click', () => {
   visualizeColorVal()
 })
 
-// Randomize values
-document.querySelector('.randomize-shape').addEventListener('click', () => {
-  randomizeShape()
-  visualizeShapeVal()
+// Randomize Typeface
+document.querySelector('.randomize-typeface').addEventListener('click', () => {
+  const root = document.documentElement;
+
+  const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+  const fontName = randomFont.text
+  const fontUrlName = randomFont.value
+
+  WebFont.load({
+    google: {
+      families: [fontName] } 
+  });
+
+  root.style.setProperty('--mdc-typography--font-family', fontName)
+  root.querySelector('.font-name').innerHTML = fontName;
+  root.querySelector('.font-link').href = `https://fonts.google.com/specimen/${fontUrlName}`
 })

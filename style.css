@@ -18,6 +18,7 @@ code {
 .sidebar {
   --demoGray: #eeeeee;
   --mdc-theme-primary: #6200ee;
+  --mdc-typography--font-family: 'Roboto', serif;
   --monospace-font-family: 'Roboto Mono', monospace;
   
   min-width: 380px;

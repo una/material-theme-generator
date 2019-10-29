@@ -146,10 +146,11 @@
           Typography Scale
           <i class="material-icons">open_in_new</i>
         </a>
+        <button class="mdc-icon-button material-icons randomize-typeface">refresh</button>
       </div>
       <div class="typography-callout">
         <code class="theme-summary-code">--mdc-typography--font-family:
-        <span class="font-name varVal">Roboto, sans-serif</span>;</code>
+        <span class="font-name varVal">Roboto</span>;</code>
         <a class="font-link mdc-typography--button" target="_blank" href="https://fonts.google.com/specimen/Roboto">See on Google Fonts <i class="material-icons">open_in_new</i></a>
       </div>
     </div>
@@ -191,13 +192,13 @@
             <header class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-top-app-bar--fixed-scrolled">
               <div class="mdc-top-app-bar__row">
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                  <a class="material-icons mdc-top-app-bar__navigation-icon mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" style="--mdc-ripple-fg-size:14px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:5px; --mdc-ripple-top:5px;">menu</a>
+                  <a class="material-icons mdc-top-app-bar__navigation-icon mdc-ripple-upgraded--unbounded mdc-ripple-upgraded">menu</a>
                   <span class="mdc-top-app-bar__title">Headline 6</span>
                 </section>
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Share" alt="Share" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">share</a>
-                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Bookmark this page" alt="Bookmark this page" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">bookmark</a>
-                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Search this page" alt="Search this page" style="--mdc-ripple-fg-size:28px; --mdc-ripple-fg-scale:1.71429; --mdc-ripple-left:10px; --mdc-ripple-top:10px;">search</a>
+                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Share" alt="Share">share</a>
+                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+                  <a class="material-icons mdc-icon-button mdc-top-app-bar__action-item mdc-ripple-upgraded--unbounded mdc-ripple-upgraded" aria-label="Search this page" alt="Search this page">search</a>
                 </section>
               </div>
             </header>
@@ -909,9 +910,14 @@
 </body>
 
   <!-- Scripts for Color Picking -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
   <!-- Material Components -->
   <script src="./components.js"></script>
+  <!-- JSON file of fonts -->
+  <script async type="text/javascript" src="fonts.js"></script>
+  <!-- Dynamically Load Web Fonts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
   <!-- This App Logic -->
-  <script src="./app.js"></script>
+  <script async src="./app.js"></script>
+
 </html>
