@@ -18,6 +18,7 @@ code {
 .sidebar {
   --demoGray: #eeeeee;
   --mdc-theme-primary: #6200ee;
+  --mdc-theme-on-primary: #ffffff;
   --mdc-typography--font-family: 'Roboto', serif;
   --monospace-font-family: 'Roboto Mono', monospace;
   
@@ -280,4 +281,9 @@ code {
 
 .hidden {
   display: none;
+}
+
+/* top app bar not in usual location, but this is adding it to the page */
+.mdc-top-app-bar--fixed-adjust {
+  padding-top: 0;
 }
