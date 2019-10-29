@@ -166,12 +166,14 @@ function download(filename, text) {
 // Start file download on button click
 const downloadBtn = document.querySelector('.save-button')
 downloadBtn.addEventListener('click', () => {
-  const colorTheme = document.querySelector('.color-theme-summaries').innerText
-  const shapeTheme = document.querySelector('.shape-theme-summaries').textContent.replace(/ /g,'')
-  console.log(colorTheme + shapeTheme)
+  const allVars = ['--mdc-theme-primary', '--mdc-theme-on-primary', '--mdc-theme-secondary', '--mdc-theme-on-secondary', '--mdc-theme-error','--mdc-theme-on-error', '--mdc-theme-surface', '--mdc-theme-on-surface', '--mdc-theme-background','--mdc-shape-small','--mdc-shape-medium','--mdc-shape-large','--mdc-typography--font-family']
+
+  const rootVals = allVars.map((val) => {
+    return `  ${val}: ${getComputedStyle(document.documentElement).getPropertyValue(val)};`
+  })
+
   download("style.css", `:root {
-${colorTheme}
-${shapeTheme}
+${rootVals.toString().replace(/,/g, '\n')}
 }`);
 })
 
@@ -227,6 +229,6 @@ document.querySelector('.randomize-typeface').addEventListener('click', () => {
   });
 
   root.style.setProperty('--mdc-typography--font-family', fontName)
-  root.querySelector('.font-name').innerHTML = fontName;
+  root.querySelector('.font-name').innerHTML = `'${fontName}'`;
   root.querySelector('.font-link').href = `https://fonts.google.com/specimen/${fontUrlName}`
 })
