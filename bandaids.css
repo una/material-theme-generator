@@ -38,14 +38,15 @@
   color: var(--mdc-theme-on-primary);
 }
 
-/* Missing custom prop on selected item, adding pseudo as background to make it work w/opacity */
-.mdc-data-table__row--selected {
-  background: none;
-}
-
 /* this is such a hack to get RGBA working with hex vars by 
 layering background colors. You can layer as many gradients 
-as you want, but you can't layer solid colors, so here we are. */
+as you want, but you can't layer solid colors, so here we are. 
+
+This *should* be able to mix with surface in an ideal world */
+.mdc-data-table {
+  background: white;
+}
+
 .mdc-data-table__row--selected {
   background: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)), var(--mdc-theme-primary)
 }

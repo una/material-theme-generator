@@ -14,19 +14,25 @@ code {
   font-family: var(--monospace-font-family);
   font-size: 14px;
 }
+
 .sidebar {
   --demoGray: #eeeeee;
-  --demoPrimary: #6200ee;
+  --mdc-theme-primary: #6200ee;
   --monospace-font-family: 'Roboto Mono', monospace;
   
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 380px;
+  max-width: 380px;
   left: 0;
   top: 0;
   background: white;
   border-right: 1px solid lightgray;
   padding: 0 1rem;
   position: relative;
+}
+
+.button-bar {
+  display: flex;
+  justify-content: space-between;
 }
 
 .sidebar .mdc-list-divider {
@@ -120,7 +126,7 @@ code {
   justify-content: flex-end;
   align-items: center;
   margin-bottom: -16px;
-  color: var(--demoPrimary);
+  color: var(--mdc-theme-primary);
 }
 
 .font-link i {
@@ -200,8 +206,9 @@ code {
 
 .section-header {
   display: flex;
-  height: 36px;
-  font-family: Roboto, sans-serif;
+  height: 48px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .section-header a {
@@ -252,6 +259,10 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mdc-dialog .mdc-dialog__surface {
+  max-width: 100%;
 }
 
 .mdc-text-field {

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Material Them Generator</title>
+  <title>Material Theme Generator</title>
 
   <!-- Material via CDN -->
   <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
@@ -48,14 +48,24 @@
         </g>
       </svg>
       Material Theme Generator</h1>
-    <p class="mdc-typography--body2">Build a Material Design theme based on the color pallete of any image.</p>
-    <div class="source">
-      <input type="file" accept="image/*" id="file" onchange="loadFile(event)" class="inputfile">
-      <label for="file" class="mdc-button mdc-button--raised">Choose a file</label>
-      <button class="mdc-button mdc-button--raised hidden save-button">Save & Share Theme</button>
-      <img id="source-image" />    
+    <p class="mdc-typography--body2">Build a Material Design using CSS custom properties, or upload an image to generate a theme based on the image.</p>
+    <div class="button-bar">
+      <label for="file" class="mdc-button mdc-button--outlined">
+        <span class="mdc-button__label">Choose a File</span>
+        <i class="material-icons mdc-button__icon">add_a_photo</i>
+      </label>
+      <button class="mdc-button mdc-button--raised save-button">Save & Share Theme</button>
     </div>
+    <div class="image-source-container hidden">
+      <div class="source">
+        <input type="file" accept="image/*" id="file" onchange="loadFile(event)" class="inputfile">
+        <img id="source-image" />    
+      </div>
+    </div>
+    
     <!-- Theme Summary -->
+    <hr class="mdc-list-divider theme-summary-divider">
+
     <div class="mdc-drawer__content drawer-content--theme-summary" style="display: block;">
       <div class="section-header">
         <a href="https://material.io/design/color/the-color-system.html#tools-for-picking-colors" class="mdc-typography--overline" target="_blank">
@@ -63,6 +73,7 @@
           Color Scheme
           <i class="material-icons">open_in_new</i>
         </a>
+        <button class="mdc-icon-button material-icons randomize-colors">refresh</button>
       </div>
       <div class="color-theme-summaries">
         <div class="theme-summary-line">
@@ -110,6 +121,7 @@
           Shape System
           <i class="material-icons">open_in_new</i>
         </a>
+        <button class="mdc-icon-button material-icons randomize-shape">refresh</button>
       </div>
       <div class="shape-theme-summaries">
         <div class="theme-summary-line theme-shape">

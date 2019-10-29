@@ -128,9 +128,7 @@ const runColors = () => {
       root.style.setProperty('--mdc-theme-surface', surfaceColor)
 
       // randomize border radius on components
-      root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
-      root.style.setProperty('--mdc-shape-medium', Math.floor(Math.random()*20)+'px');
-      root.style.setProperty('--mdc-shape-large', Math.floor(Math.random()*20)+'px');
+      randomizeShape()
 
       // Update colors in theme summary
       visualizeColorVal()
@@ -139,7 +137,7 @@ const runColors = () => {
       visualizeShapeVal()
 
       // Display Theme button
-      downloadBtn.classList.remove('hidden')
+      document.querySelector('.image-source-container').classList.remove('hidden')
     });
   }
 }
@@ -175,4 +173,41 @@ downloadBtn.addEventListener('click', () => {
 ${colorTheme}
 ${shapeTheme}
 }`);
+})
+
+// Randomize values
+const randomizeShape = () => {
+  const root = document.documentElement;
+  root.style.setProperty('--mdc-shape-small', Math.floor(Math.random()*20)+'px');
+  root.style.setProperty('--mdc-shape-medium', Math.floor(Math.random()*20)+'px');
+  root.style.setProperty('--mdc-shape-large', Math.floor(Math.random()*20)+'px');
+}
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const randomizeColor = () => {
+  const root = document.documentElement;
+
+  root.style.setProperty('--mdc-theme-primary', getRandomColor())
+  root.style.setProperty('--mdc-theme-secondary', getRandomColor())
+  root.style.setProperty('--mdc-theme-background', getRandomColor())
+  root.style.setProperty('--mdc-theme-surface', getRandomColor())
+}
+
+document.querySelector('.randomize-colors').addEventListener('click', () => {
+  randomizeColor()
+  visualizeColorVal()
+})
+
+// Randomize values
+document.querySelector('.randomize-shape').addEventListener('click', () => {
+  randomizeShape()
+  visualizeShapeVal()
 })
