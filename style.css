@@ -21,8 +21,8 @@ code {
   --mdc-theme-on-primary: #ffffff;
   --monospace-font-family: 'Roboto Mono', monospace;
   
-  min-width: 380px;
-  max-width: 380px;
+  min-width: 400px;
+  max-width: 400px;
   left: 0;
   top: 0;
   background: white;
@@ -55,6 +55,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .theme-summary-color {
@@ -62,6 +63,8 @@ code {
   padding: 0;
   width: 42px;
   height: 26px;
+  z-index: 2;
+  background: none;
 }
 
 .theme-summary-shape--small:after {
@@ -294,4 +297,18 @@ code {
 
 .theme-summary-typography {
   margin: 1rem 0;
+}
+
+.contrast {
+  margin-right: 0.5em;
+  font-weight: 600;
+  border-right: 2px solid;
+  width: 5em;
+  align-items: center;
+  position: absolute;
+  right: 13px;
+  top: -1.2em;
+  padding: 0.5em 1.8em 0.5em 0;
+  z-index: 0;
+  text-align: right;
 }

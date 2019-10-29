@@ -63,14 +63,37 @@ const visualizeColorVal = () => {
     const currentColor = getComputedStyle(document.documentElement).getPropertyValue(colorVal)
     elem.value = currentColor.trim()
     elem.parentElement.querySelector('.varVal').innerText =  `: ${currentColor};`
+    visualizeContrast(colorVal)
 
+    // Event Listeners for update
     elem.addEventListener('change', (e) => {
-        colorVal = e.target.value
-        const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
-        e.target.parentElement.querySelector('.varVal').innerText = `: ${colorVal};`
-        document.documentElement.style.setProperty(varVal, colorVal);
+      colorVal = e.target.value
+      const varVal = e.target.parentElement.firstElementChild.innerText.split(':')[0]
+      e.target.parentElement.querySelector('.varVal').innerText = `: ${colorVal};`
+      document.documentElement.style.setProperty(varVal, colorVal);
+      visualizeContrast(varVal)
     })
   })
+}
+
+// Contrast
+const visualizeContrast = (colorVal) => {
+  const colorFamily = colorVal.includes('on') ? colorVal.toString().replace('--mdc-theme-on-', '') : colorVal.toString().replace('--mdc-theme-', '')
+  const contrastElem = document.querySelector(`.contrast-${colorFamily}`)
+  if (contrastElem) {
+    const contrastVal = tinycolor.readability(getComputedStyle(document.documentElement).getPropertyValue(`--mdc-theme-${colorFamily}`), getComputedStyle(document.documentElement).getPropertyValue(`--mdc-theme-on-${colorFamily}`))
+
+    if (contrastVal < 3) {
+      contrastElem.innerText = `${contrastVal.toFixed(1)} X`
+      contrastElem.style.color = 'red'
+    } else if (contrastVal < 4.5) {
+      contrastElem.innerText = `${contrastVal.toFixed(1)} AA`
+      contrastElem.style.color = 'orange'
+    } else if (contrastVal >= 4.5) {
+      contrastElem.innerText = `${contrastVal.toFixed(1)} AAA`
+      contrastElem.style.color = 'green'
+    }
+  }
 }
 
 // Read Image
