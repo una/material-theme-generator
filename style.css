@@ -19,7 +19,6 @@ code {
   --demoGray: #eeeeee;
   --mdc-theme-primary: #6200ee;
   --mdc-theme-on-primary: #ffffff;
-  --mdc-typography--font-family: 'Roboto', serif;
   --monospace-font-family: 'Roboto Mono', monospace;
   
   min-width: 380px;
@@ -30,6 +29,11 @@ code {
   border-right: 1px solid lightgray;
   padding: 0 1rem;
   position: relative;
+}
+
+.sidebar .mdc-button,
+.sidebar a {
+  --mdc-typography--font-family: 'Roboto', serif;
 }
 
 .button-bar {
@@ -286,4 +290,8 @@ code {
 /* top app bar not in usual location, but this is adding it to the page */
 .mdc-top-app-bar--fixed-adjust {
   padding-top: 0;
+}
+
+.theme-summary-typography {
+  margin: 1rem 0;
 }

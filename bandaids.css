@@ -74,3 +74,20 @@ This *should* be able to mix with surface in an ideal world */
 .mdc-data-table__cell {
   font-family: var(--mdc-typography--font-family);
 }
+
+/* Title Type, breaking out for potential changes */
+.mdc-typography--headline1,
+.mdc-typography--headline2,
+.mdc-typography--headline3,
+.mdc-typography--headline4,
+.mdc-typography--headline5,
+.mdc-typography--headline6,
+.mdc-typography--subtitle1,
+.mdc-typography--subtitle2,
+.mdc-typography--body1,
+.mdc-typography--body2,
+.mdc-typography--button,
+.mdc-typography--caption,
+.mdc-typography--overline {
+  font-family: var(--mdc-typography--font-family);
+}
