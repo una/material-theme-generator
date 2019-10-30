@@ -91,3 +91,16 @@ This *should* be able to mix with surface in an ideal world */
 .mdc-typography--overline {
   font-family: var(--mdc-typography--font-family);
 }
+
+/* on-colors */
+.mdc-card .mdc-typography,
+.mdc-menu .mdc-list,
+.mdc-dialog .mdc-dialog__title,
+.mdc-dialog .mdc-dialog__content,
+.mdc-chip__text {
+  color: var(--mdc-theme-on-surface);
+}
+
+.mdc-chip--selected .mdc-chip__checkmark-path {
+  color: var(--mdc-theme-on-surface);
+}
